@@ -61,6 +61,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 h1 {
   color: var(--clr-blue);
 }

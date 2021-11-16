@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Search from './UI/Search';
+import Search from './Search';
 import logo from '../../assets/images/fakestore2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

@@ -15,9 +15,7 @@ const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const showSearchHandler = () => setShowSearch(true);
-
   const closeSearchHandler = () => setShowSearch(false);
-
   const toggleNavHandler = () => setToggleMenu(!toggleMenu);
 
   useEffect(() => {

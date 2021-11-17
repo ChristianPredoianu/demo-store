@@ -16,9 +16,9 @@ html {
   overflow-x: hidden;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+/* Remove list styles on ul, ol elements  default styling will be removed */
+ul,
+ol {
   list-style: none;
 }
 
@@ -70,7 +70,8 @@ h1 {
 }
 
 :root {
-  --clr-blue: red;
+  --clr-black: #000000;
+  --clr-white: #ffffff;
 }
 
 .container {

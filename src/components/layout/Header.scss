@@ -1,18 +1,7 @@
 @use '../../sass/abstracts/' as *;
 
-.top-header {
-  background-color: var(--clr-black);
-  color: var(--clr-white);
-  font-size: 1.5rem;
-  padding: 1.5rem 0;
-  display: none;
-
-  @include respond(lg) {
-    display: block;
-  }
-}
-
 .nav {
+  position: relative;
   @include flex-config($display: flex, $justify: space-between, $align: center);
 
   @include respond(sm) {
@@ -28,48 +17,6 @@
 
     @include respond(md) {
       width: 15rem;
-    }
-  }
-}
-
-.nav-list {
-  width: 30%;
-  display: none;
-  font-size: clamp(1.6rem, 1.5vw + 0.1rem, 1.8rem);
-  font-weight: 700;
-
-  @include respond(sm) {
-    @include flex-config(
-      $display: flex,
-      $justify: space-around,
-      $align: center
-    );
-    width: 50%;
-  }
-}
-
-.nav-icons {
-  width: 30%;
-
-  @include respond(sm) {
-    width: 20%;
-  }
-
-  @include respond(md) {
-    width: 10%;
-  }
-
-  @include flex-config($display: flex, $justify: space-around, $align: center);
-  margin-right: 2rem;
-  font-size: 2rem;
-
-  &__search {
-    cursor: pointer;
-  }
-
-  &__hamburger {
-    @include respond(sm) {
-      display: none;
     }
   }
 }

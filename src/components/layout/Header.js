@@ -1,63 +1,60 @@
 import { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom';
-import Search from '../UI/Search';
+
+import TopHeader from '../nav/TopHeader';
 import logo from '../../assets/images/fakestore2.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faSearch,
-  faShoppingCart,
-  faBars,
-} from '@fortawesome/free-solid-svg-icons';
+import NavLinks from '../nav/NavLinks';
+import NavIcons from '../nav/NavIcons';
+import Search from '../nav/Search';
 
 import './Header.scss';
 
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  const searchIcon = <FontAwesomeIcon icon={faSearch} />,
-    cartIcon = <FontAwesomeIcon icon={faShoppingCart} />,
-    hamburgerIcon = <FontAwesomeIcon icon={faBars} />;
+  const showSearchHandler = () => setShowSearch(true);
 
-  const showSearchHandler = () => {
-    setShowSearch(true);
-  };
+  const closeSearchHandler = () => setShowSearch(false);
 
-  const closeSearchHandler = () => {
-    setShowSearch(false);
-  };
+  const toggleNavHandler = () => setToggleMenu(!toggleMenu);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+
+      if (screenWidth < 640) {
+        setToggleMenu(false);
+      }
+    };
+
+    window.addEventListener('resize', changeWidth);
+
+    return () => {
+      window.removeEventListener('resize', changeWidth);
+    };
+  }, [screenWidth]);
 
   return (
     <header>
-      <div className="top-header">
-        <div className="container">
-          <p>Free Shipping for standard order over 100$</p>
-        </div>
-      </div>
+      <TopHeader />
       <div className="container">
         <nav className="nav">
           <img src={logo} alt="Store logo" className="nav__logo" />
-          <ul className="nav-list">
-            <li className="nav-list__link">
-              <Link to="/"> Home</Link>
-            </li>
-            <li className="nav-list__link">
-              <Link to="/Shop"> Shop</Link>
-            </li>
-            <li className="nav-list__link">
-              <Link to="/About"> About</Link>
-            </li>
-            <li className="nav-list__link">
-              <Link to="/Contact"> Contact</Link>
-            </li>
-          </ul>
-          <ul className="nav-icons">
-            <li className="nav-icons__search" onClick={showSearchHandler}>
-              {searchIcon}
-            </li>
-            <li>{cartIcon}</li>
-            <li className="nav-icons__hamburger">{hamburgerIcon}</li>
-          </ul>
+          <CSSTransition
+            in={toggleMenu || screenWidth > 640}
+            timeout={300}
+            classNames="slide"
+            unmountOnExit
+          >
+            {<NavLinks />}
+          </CSSTransition>
+          <NavIcons
+            onOpenSearch={showSearchHandler}
+            onToggleMenu={toggleNavHandler}
+            onToggleIcon={toggleMenu}
+          />
           <CSSTransition
             in={showSearch}
             timeout={300}

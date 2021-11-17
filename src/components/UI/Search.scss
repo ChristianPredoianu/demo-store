@@ -10,11 +10,12 @@
     $justify: center,
     $align: center
   );
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255, 0.98);
 
   &__close-icon {
     margin: 0 0 2rem 19rem;
     font-size: 3rem;
+    cursor: pointer;
   }
 }
 

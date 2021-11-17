@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import Search from '../UI/Search';
 import logo from '../../assets/images/fakestore2.png';
@@ -51,11 +52,20 @@ const Header = () => {
             </li>
           </ul>
           <ul className="nav-icons">
-            <li onClick={showSearchHandler}>{searchIcon}</li>
+            <li className="nav-icons__search" onClick={showSearchHandler}>
+              {searchIcon}
+            </li>
             <li>{cartIcon}</li>
             <li className="nav-icons__hamburger">{hamburgerIcon}</li>
           </ul>
-          {showSearch && <Search onClose={closeSearchHandler} />}
+          <CSSTransition
+            in={showSearch}
+            timeout={300}
+            classNames="slide"
+            unmountOnExit
+          >
+            <Search onClose={closeSearchHandler} />
+          </CSSTransition>
         </nav>
       </div>
     </header>

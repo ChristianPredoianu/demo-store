@@ -65,13 +65,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-h1 {
-  color: var(--clr-blue);
-}
-
 :root {
   --clr-black: #000000;
   --clr-white: #ffffff;
+  --clr-blue: #717fe0;
+  --clr-gray-light: #dddddd;
 }
 
 .container {

@@ -10,13 +10,13 @@ import Search from '../nav/Search';
 import './Header.scss';
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [showSearch, setShowSearch] = useState(false),
+    [toggleMenu, setToggleMenu] = useState(false),
+    [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  const showSearchHandler = () => setShowSearch(true);
-  const closeSearchHandler = () => setShowSearch(false);
-  const toggleNavHandler = () => setToggleMenu(!toggleMenu);
+  const showSearchHandler = () => setShowSearch(true),
+    closeSearchHandler = () => setShowSearch(false),
+    toggleNavHandler = () => setToggleMenu(!toggleMenu);
 
   useEffect(() => {
     const changeWidth = () => {

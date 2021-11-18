@@ -1,0 +1,31 @@
+@use '../sass/abstracts/' as *;
+
+.hero {
+  @include flex-config($justify: space-around, $align: center);
+  background-color: var(--clr-gray-light);
+  min-height: 100vh;
+}
+
+.hero-wrapper {
+  display: flex;
+  background-color: red;
+  &__heading-primary {
+    display: flex;
+    font-size: clamp(1.6rem, 1.5vw + 0.1rem, 2rem);
+    font-weight: 500;
+  }
+
+  &__heading-secondary {
+    font-size: clamp(1.8rem, 2vw + 0.1rem, 8rem);
+    margin: 2rem 0;
+  }
+
+  &__cta {
+    @include flex-config($direction: column, $justify: center);
+    width: 50%;
+  }
+}
+
+.hero-img-wrapper {
+  width: 40%;
+}

@@ -11,4 +11,9 @@
   line-height: 1.466667;
   border-radius: 2.3rem;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-black);
+  }
 }

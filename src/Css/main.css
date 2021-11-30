@@ -6,14 +6,9 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 /* Remove list styles on ul, ol elements  default styling will be removed */
@@ -69,7 +64,7 @@ body {
   --clr-black: #000000;
   --clr-white: #ffffff;
   --clr-blue: #717fe0;
-  --clr-gray-light: #dddddd;
+  --clr-gray-light: #e6e6e6;
 }
 
 .container {

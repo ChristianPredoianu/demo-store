@@ -1,0 +1,9 @@
+@use '../../sass/abstracts/' as *;
+
+.section-products {
+  padding: 10rem 0;
+  display: grid;
+  grid-column-gap: 5rem;
+  grid-row-gap: 7rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}

@@ -1,33 +1,3 @@
-@use '../../sass/abstracts/' as *;
-
 .hero-swiper {
   height: 100vh;
-}
-
-.slide-container {
-  position: relative;
-  @include flex-config($align: center);
-  height: 100%;
-  background-image: url('../../assets/images/man1.jpg');
-  background-position: left;
-  background-repeat: no-repeat;
-  background-color: var(--clr-gray-light);
-
-  @include respond(md) {
-    background-position: right;
-  }
-}
-
-.cta-wrapper {
-  margin-left: 1rem;
-}
-
-.swiper-heading-primary {
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-.swiper-heading-secondary {
-  font-size: 4rem;
-  margin: 2rem 0 3rem 0;
 }

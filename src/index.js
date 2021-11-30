@@ -5,10 +5,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { FetchProductsDataContextProvider } from './context/fetch-products-context';
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <FetchProductsDataContextProvider>
+        <App />
+      </FetchProductsDataContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

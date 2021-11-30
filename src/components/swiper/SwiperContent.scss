@@ -1,0 +1,40 @@
+@use '../../sass/abstracts/' as *;
+
+.slide-container {
+  position: relative;
+  @include flex-config($align: center);
+  height: 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-color: var(--clr-gray-light);
+
+  @include respond(md) {
+    background-position: right;
+  }
+
+  &--1 {
+    background-image: url('../../assets/images/man1.jpg');
+  }
+
+  &--2 {
+    background-image: url('../../assets/images/man1.jpg');
+  }
+
+  &--3 {
+    background-image: url('../../assets/images/man1.jpg');
+  }
+}
+
+.cta-wrapper {
+  margin-left: 1rem;
+}
+
+.swiper-heading-primary {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.swiper-heading-secondary {
+  font-size: 4rem;
+  margin: 2rem 0 3rem 0;
+}

@@ -1,18 +1,12 @@
-import { useContext } from 'react';
-
 import ProductItem from './ProductItem';
-import FetchProductsDataContextProvider from '../../context/fetch-products-context';
 
 import './Products.scss';
 
-const Products = () => {
-  const ctx = useContext(FetchProductsDataContextProvider);
-  console.log(ctx.productsData);
-
+const Products = (props) => {
   let output;
 
-  if (ctx.productsData !== undefined) {
-    output = ctx.productsData.map((product) => (
+  if (props.products !== null) {
+    output = props.products.map((product) => (
       <ProductItem
         key={product.id}
         title={product.title}
@@ -31,7 +25,6 @@ const Products = () => {
 
   return (
     <>
-      <h3 className="products-heading">Products Overview</h3>
       <section className="section-products">{output}</section>
     </>
   );

@@ -65,6 +65,17 @@ body {
   --clr-white: #ffffff;
   --clr-blue: #717fe0;
   --clr-gray-light: #e6e6e6;
+  --section-spacing: 7rem;
+}
+@media (min-width: 40em) {
+  :root {
+    --section-spacing: 10rem;
+  }
+}
+@media (min-width: 64em) {
+  :root {
+    --section-spacing: 20rem;
+  }
 }
 
 .container {

@@ -16,9 +16,9 @@ const Home = () => {
   );
 
   const imgArray = [menImg, jewleryImg, electronicsImg, womensImg];
-  let categories;
-  let uniqueCategories;
-  let categoriesArray = [];
+  let categories,
+    uniqueCategories,
+    categoriesArray = [];
 
   if (!isLoadingData) {
     //New array with just the categories

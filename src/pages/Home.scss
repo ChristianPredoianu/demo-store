@@ -2,7 +2,20 @@
 
 .hero {
   background-color: var(--clr-gray-light);
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+}
+
+.categories {
+  display: grid;
+  justify-content: center;
+  grid-row-gap: 10rem;
+  padding: var(--section-spacing) 5rem;
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+  }
 }
 
 .products-heading {

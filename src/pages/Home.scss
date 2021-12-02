@@ -4,3 +4,9 @@
   background-color: var(--clr-gray-light);
   height: 100vh;
 }
+
+.products-heading {
+  font-size: clamp(2.5rem, 2vw + 0.1rem, 3.8rem);
+  margin-top: 5rem;
+  text-transform: uppercase;
+}

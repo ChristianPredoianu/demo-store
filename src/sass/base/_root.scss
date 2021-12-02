@@ -1,6 +1,18 @@
+@use '../abstracts/' as *;
+
 :root {
   --clr-black: #000000;
   --clr-white: #ffffff;
   --clr-blue: #717fe0;
   --clr-gray-light: #e6e6e6;
+
+  --section-spacing: 7rem;
+
+  @include respond(sm) {
+    --section-spacing: 10rem;
+  }
+
+  @include respond(md) {
+    --section-spacing: 20rem;
+  }
 }

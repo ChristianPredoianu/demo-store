@@ -10,10 +10,9 @@ import { FetchProductsDataContextProvider } from './context/fetch-products-conte
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <FetchProductsDataContextProvider>
-        <App />
-      </FetchProductsDataContextProvider>
+      <App />
     </BrowserRouter>
+    ,
   </React.StrictMode>,
   document.getElementById('root')
 );

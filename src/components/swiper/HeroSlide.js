@@ -15,10 +15,10 @@ const HeroSlide = () => {
   return (
     <Swiper
       onSlideChange={() => console.log('slide change')}
-      autoplay={{
+      /*    autoplay={{
         delay: 5000,
         disableOnInteraction: false,
-      }}
+      }} */
       className="hero-swiper"
     >
       <SwiperSlide>

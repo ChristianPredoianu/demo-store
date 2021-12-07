@@ -16,11 +16,10 @@ const Home = () => {
   );
 
   const imgArray = [menImg, jewleryImg, electronicsImg, womensImg];
-  let categories,
-    uniqueCategories,
-    categoriesArray = [];
+  let categoriesArray = [];
 
   if (!isLoadingData) {
+    let categories, uniqueCategories;
     //New array with just the categories
     categories = productsData.map((a) => a.category);
     //Make an array with unique categories
@@ -35,7 +34,7 @@ const Home = () => {
     });
   }
 
-  const categoryCards = categoriesArray.map((category, index) => (
+  const categoryCard = categoriesArray.map((category, index) => (
     <CategoryCard key={index} category={category} />
   ));
 
@@ -50,7 +49,7 @@ const Home = () => {
         {isLoadingData && <LoadingSpinner />}
         {!isLoadingData && (
           <>
-            <section className="categories">{categoryCards}</section>
+            <section className="categories">{categoryCard}</section>
             <section className="products">
               <h3 className="products-heading">Products Overview</h3>
               <Products products={productsData} />

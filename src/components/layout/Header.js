@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useScreenWidth from '../../hooks/useScreenWidth';
 import { CSSTransition } from 'react-transition-group';
 
 import TopHeader from '../nav/TopHeader';
@@ -10,28 +11,19 @@ import Search from '../nav/Search';
 import './Header.scss';
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false),
-    [toggleMenu, setToggleMenu] = useState(false),
-    [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const { screenWidth } = useScreenWidth();
+  const [showSearch, setShowSearch] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  /* const [screenWidth, setScreenWidth] = useState(window.innerWidth); */
 
   const showSearchHandler = () => setShowSearch(true),
     closeSearchHandler = () => setShowSearch(false),
     toggleNavHandler = () => setToggleMenu(!toggleMenu);
 
   useEffect(() => {
-    const changeWidth = () => {
-      setScreenWidth(window.innerWidth);
-
-      if (screenWidth < 640) {
-        setToggleMenu(false);
-      }
-    };
-
-    window.addEventListener('resize', changeWidth);
-
-    return () => {
-      window.removeEventListener('resize', changeWidth);
-    };
+    if (screenWidth < 640) {
+      setToggleMenu(false);
+    }
   }, [screenWidth]);
 
   return (

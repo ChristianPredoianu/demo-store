@@ -1,0 +1,29 @@
+@use '../../../sass/abstracts/' as *;
+
+.filter-list {
+  @include flex-config($direction: column, $justify: space-between);
+  font-size: 1.5rem;
+  background-color: var(--clr-gray-medium);
+  padding: 5rem 1rem;
+
+  @include respond(sm) {
+    @include flex-config($direction: row, $justify: space-between);
+    background-color: transparent;
+  }
+
+  @include respond(md) {
+    width: 50%;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+
+      @include respond(sm) {
+        margin-top: 0;
+      }
+    }
+  }
+}

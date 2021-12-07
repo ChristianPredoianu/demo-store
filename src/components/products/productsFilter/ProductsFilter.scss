@@ -1,0 +1,18 @@
+@use '../../../sass/abstracts/' as *;
+
+.products-filter {
+  padding: 5rem 0;
+}
+
+.filter-btn {
+  font-size: 1.3rem;
+  background-color: var(--clr-blue);
+  padding: 1rem 1.4rem;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+
+  @include respond(sm) {
+    display: none;
+  }
+}

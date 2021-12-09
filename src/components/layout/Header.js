@@ -14,11 +14,13 @@ const Header = () => {
   const { screenWidth } = useScreenWidth();
   const [showSearch, setShowSearch] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
-  /* const [screenWidth, setScreenWidth] = useState(window.innerWidth); */
+
+  console.log('rendering header', showSearch, toggleMenu, screenWidth);
 
   const showSearchHandler = () => setShowSearch(true),
     closeSearchHandler = () => setShowSearch(false),
-    toggleNavHandler = () => setToggleMenu(!toggleMenu);
+    toggleNavHandler = () => setToggleMenu(!toggleMenu),
+    closeMobileMenuHandler = () => setToggleMenu(false);
 
   useEffect(() => {
     if (screenWidth < 640) {
@@ -38,7 +40,7 @@ const Header = () => {
             classNames="slide"
             unmountOnExit
           >
-            {<NavLinks />}
+            <NavLinks onCloseMobileMenu={closeMobileMenuHandler} />
           </CSSTransition>
           <NavIcons
             onOpenSearch={showSearchHandler}

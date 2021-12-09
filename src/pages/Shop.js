@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import useApi from '../hooks/useApi';
 import ProductsFilter from '../components/products/productsFilter/ProductsFilter';
@@ -6,40 +7,44 @@ import LoadingSpinner from '../components/UI/LoadingSpinner';
 
 import './Shop.scss';
 
-const Shop = (props) => {
+const Shop = () => {
   const { state } = useLocation(),
     category = state,
     { productsData, isLoadingData, error } = useApi(
       'https://fakestoreapi.com/products'
-    );
+    ),
+    [filteredProducts, setFilteredProducts] = useState('all');
 
-  let products,
-    output,
-    categoriesArray = [];
+  let products, output, userFilteredProducts;
+
+  useEffect(() => {
+    setFilteredProducts(category);
+  }, [category]);
+
+  const filteredProductsHandler = (selectedCategory) =>
+    setFilteredProducts(selectedCategory);
+
+  console.log(filteredProducts);
 
   if (!isLoadingData) {
-    let categories, uniqueCategories;
     products = productsData.filter((product) => product.category === category);
 
-    categories = productsData.map((a) => a.category);
-
-    uniqueCategories = [...new Set(categories)];
-    uniqueCategories.forEach((category) =>
-      categoriesArray.push({ category: category })
+    userFilteredProducts = productsData.filter(
+      (product) => product.category === filteredProducts
     );
   }
 
-  if (isLoadingData) {
+  /*   if (isLoadingData) {
     output = <LoadingSpinner />;
   } else if (state !== null) {
     output = <Products products={products} />;
   } else {
-    output = <Products products={productsData} />;
-  }
+    output = <Products products={userFilteredProducts} />;
+  } */
 
   return (
     <div className="container">
-      <ProductsFilter categories={categoriesArray} />
+      <ProductsFilter onFilteredProducts={filteredProductsHandler} />
       {output}
     </div>
   );

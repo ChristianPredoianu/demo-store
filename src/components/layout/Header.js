@@ -15,8 +15,6 @@ const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  console.log('rendering header', showSearch, toggleMenu, screenWidth);
-
   const showSearchHandler = () => setShowSearch(true),
     closeSearchHandler = () => setShowSearch(false),
     toggleNavHandler = () => setToggleMenu(!toggleMenu),

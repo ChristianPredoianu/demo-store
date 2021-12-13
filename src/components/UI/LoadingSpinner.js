@@ -1,7 +1,7 @@
 import './LoadingSpinner.scss';
 
 const LoadingSpinner = () => {
-  return <div className="loader">Loading...</div>;
+  return <div className="loader"></div>;
 };
 
 export default LoadingSpinner;

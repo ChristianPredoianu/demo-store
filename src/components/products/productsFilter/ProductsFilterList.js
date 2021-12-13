@@ -1,45 +1,32 @@
+import ProductsFilterBtn from './ProductsFilterBtn';
+
 import './ProductsFilterList.scss';
 
 const ProductsFilterList = (props) => {
   console.log(props);
+  let categoriesArray = [];
 
-  const test = () => {
-    console.log('dsadsa');
-  };
-  return (
-    <div className="filter-list">
-      <button
-        className="filter-list__item"
-        onClick={() => props.onClickedCategory('all')}
-      >
-        All
-      </button>
-      <button
-        className="filter-list__item"
-        onClick={() => props.onClickedCategory("men's clothing")}
-      >
-        Mens
-      </button>
-      <button
-        className="filter-list__item"
-        onClick={() => props.onClickedCategory("women's clothing")}
-      >
-        Womens
-      </button>
-      <button
-        className="filter-list__item"
-        onClick={() => props.onClickedCategory('jewlery')}
-      >
-        Jewlery
-      </button>
-      <button
-        className="filter-list__item"
-        onClick={() => props.onClickedCategory('electronics')}
-      >
-        Electronics
-      </button>
-    </div>
-  );
+  if (props.productsData !== null) {
+    let categories, uniqueCategories;
+    //New array with just the categories
+    categories = props.productsData.map((a) => a.category);
+    //Make an array with unique categories
+    uniqueCategories = [...new Set(categories)];
+    uniqueCategories.forEach((category) =>
+      categoriesArray.push({ category: category })
+    );
+    categoriesArray.unshift({ category: 'all' });
+  }
+
+  const filterBtn = categoriesArray.map((category, index) => (
+    <ProductsFilterBtn
+      key={index}
+      category={category}
+      onClickedCategory={props.onClickedCategory}
+    />
+  ));
+
+  return <div className="filter-list">{filterBtn}</div>;
 };
 
 export default ProductsFilterList;

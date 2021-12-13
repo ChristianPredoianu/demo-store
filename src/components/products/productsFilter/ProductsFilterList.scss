@@ -18,20 +18,4 @@
   @include respond(md) {
     width: 50%;
   }
-
-  &__item {
-    background-color: var(--clr-gray-medium);
-    cursor: pointer;
-
-    &:not(:first-of-type) {
-      margin-top: 2rem;
-
-      @include respond(sm) {
-        margin-top: 0;
-      }
-    }
-
-    @include respond(sm) {
-    }
-  }
 }

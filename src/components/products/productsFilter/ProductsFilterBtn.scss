@@ -1,0 +1,14 @@
+@use '../../../sass/abstracts/' as *;
+
+.filter-btn {
+  background-color: var(--clr-gray-medium);
+  cursor: pointer;
+
+  &:not(:first-of-type) {
+    margin-top: 2rem;
+
+    @include respond(sm) {
+      margin-top: 0;
+    }
+  }
+}

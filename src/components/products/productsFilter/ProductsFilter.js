@@ -18,7 +18,6 @@ const ProductsFilter = (props) => {
       setIsFilterOpen(false);
     }
   }, [screenWidth]);
-  console.log(props);
 
   return (
     <section className="products-filter">
@@ -27,7 +26,10 @@ const ProductsFilter = (props) => {
       </button>
 
       {(isFilterOpen || screenWidth > 640) && (
-        <ProductsFilterList onClickedCategory={props.onFilteredProducts} />
+        <ProductsFilterList
+          onClickedCategory={props.onFilteredProducts}
+          productsData={props.productsData}
+        />
       )}
     </section>
   );

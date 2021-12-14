@@ -33,6 +33,7 @@ const Home = () => {
       category.categoryImg = img;
     });
   }
+  console.log(categoriesArray);
 
   const categoryCard = categoriesArray.map((category, index) => (
     <CategoryCard key={index} category={category} />

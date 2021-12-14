@@ -13,38 +13,44 @@ const Shop = () => {
     { productsData, isLoadingData, error } = useApi(
       'https://fakestoreapi.com/products'
     ),
-    [filteredProducts, setFilteredProducts] = useState('all');
+    [initialCategory, setInitialCategory] = useState(null),
+    [filteredProducts, setFilteredProducts] = useState(null);
 
   let products, output, userFilteredProducts;
 
   useEffect(() => {
-    setFilteredProducts(category);
+    setInitialCategory(category);
   }, [category]);
 
-  const filteredProductsHandler = (selectedCategory) =>
+  const filteredProductsHandler = (selectedCategory) => {
     setFilteredProducts(selectedCategory);
-
-  console.log(filteredProducts);
+    setInitialCategory(null);
+  };
 
   if (!isLoadingData) {
     products = productsData.filter((product) => product.category === category);
 
-    userFilteredProducts = productsData.filter(
-      (product) => product.category === filteredProducts
-    );
+    filteredProducts === 'all'
+      ? (userFilteredProducts = productsData)
+      : (userFilteredProducts = productsData.filter(
+          (product) => product.category === filteredProducts
+        ));
   }
 
-  /*   if (isLoadingData) {
+  if (isLoadingData) {
     output = <LoadingSpinner />;
-  } else if (state !== null) {
+  } else if (initialCategory !== null) {
     output = <Products products={products} />;
   } else {
     output = <Products products={userFilteredProducts} />;
-  } */
+  }
 
   return (
     <div className="container">
-      <ProductsFilter onFilteredProducts={filteredProductsHandler} />
+      <ProductsFilter
+        onFilteredProducts={filteredProductsHandler}
+        productsData={productsData}
+      />
       {output}
     </div>
   );

@@ -3,7 +3,6 @@ import ProductsFilterBtn from './ProductsFilterBtn';
 import './ProductsFilterList.scss';
 
 const ProductsFilterList = (props) => {
-  console.log(props);
   let categoriesArray = [];
 
   if (props.productsData !== null) {

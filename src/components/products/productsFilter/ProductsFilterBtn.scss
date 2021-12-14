@@ -1,8 +1,9 @@
 @use '../../../sass/abstracts/' as *;
 
 .filter-btn {
-  background-color: var(--clr-gray-medium);
+  background-color: transparent;
   cursor: pointer;
+  border: none;
 
   &:not(:first-of-type) {
     margin-top: 2rem;

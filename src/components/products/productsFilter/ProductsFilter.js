@@ -21,7 +21,7 @@ const ProductsFilter = (props) => {
 
   return (
     <section className="products-filter">
-      <button className="filter-btn" onClick={toggleFilterHandler}>
+      <button className="filter-btn-toggler" onClick={toggleFilterHandler}>
         {filterIcon} <span>Filter</span>
       </button>
 

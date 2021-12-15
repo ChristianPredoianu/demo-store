@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProductsModal from '../UI/ProductsModal';
 import Card from '../UI/Card';
+import CartProvider from '../../store/CartProvider';
 
 import './ProductItem.scss';
 
@@ -23,12 +24,14 @@ const ProductItem = (props) => {
       </Card>
 
       {isModalOpen && (
-        <ProductsModal
-          onCloseModal={closeModalHandler}
-          productImg={props.image}
-          productTitle={props.title}
-          productPrice={props.price}
-        />
+        <CartProvider>
+          <ProductsModal
+            onCloseModal={closeModalHandler}
+            productImg={props.image}
+            productTitle={props.title}
+            productPrice={props.price}
+          />
+        </CartProvider>
       )}
     </>
   );

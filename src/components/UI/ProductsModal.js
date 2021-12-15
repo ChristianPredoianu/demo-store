@@ -1,5 +1,8 @@
+import { useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 import CartCounter from './CartCounter';
+import CartContext from '../../store/cart-context';
+import CtaBtn from './CtaBtn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,6 +13,10 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
+  const [cartCounter, setCartCounter] = useState(0);
+  const cartCtx = useContext(CartContext);
+  console.log(cartCtx);
+
   const closeIcon = (
     <FontAwesomeIcon
       icon={faTimesCircle}
@@ -17,6 +24,22 @@ const ModalOverlay = (props) => {
       onClick={props.onClose}
     />
   );
+
+  const increaseCartCountHandler = () =>
+    setCartCounter((prevState) => prevState + 1);
+  const decreaseCartCountHandler = () => {
+    if (cartCounter >= 1) {
+      setCartCounter((prevState) => prevState - 1);
+    }
+  };
+
+  const changeCountHandler = (e) => {
+    if (e.target.value >= 0) {
+      setCartCounter(+e.target.value);
+    }
+  };
+
+  console.log(cartCounter);
 
   return (
     <div className="modal">
@@ -29,8 +52,14 @@ const ModalOverlay = (props) => {
         </div>
       </div>
       <div className="add-to-cart">
-        <CartCounter />
+        <CartCounter
+          onIncreaseCartCount={increaseCartCountHandler}
+          onDecreseCartCount={decreaseCartCountHandler}
+          onChangeCount={changeCountHandler}
+          cartCount={cartCounter}
+        />
       </div>
+      <CtaBtn>Add to cart</CtaBtn>
     </div>
   );
 };

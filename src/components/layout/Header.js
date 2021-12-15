@@ -7,6 +7,7 @@ import logo from '../../assets/images/fakestore2.png';
 import NavLinks from '../nav/NavLinks';
 import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
+import Cart from '../cart/Cart';
 
 import './Header.scss';
 
@@ -53,6 +54,7 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
+          <Cart />
         </nav>
       </div>
     </header>

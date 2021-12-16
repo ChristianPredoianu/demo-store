@@ -14,7 +14,7 @@ const Shop = () => {
       'https://fakestoreapi.com/products'
     ),
     [initialCategory, setInitialCategory] = useState(null),
-    [filteredProducts, setFilteredProducts] = useState(null);
+    [filteredProducts, setFilteredProducts] = useState('all');
 
   let products, output, userFilteredProducts;
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ProductsModal from '../UI/ProductsModal';
+import ProductModal from '../UI/Product-modal/ProductModal';
 import Card from '../UI/Card';
 import CartProvider from '../../store/CartProvider';
 
@@ -10,6 +10,7 @@ const ProductItem = (props) => {
 
   const openModalHandler = () => setIsModalOpen(true),
     closeModalHandler = () => setIsModalOpen(false);
+  console.log(props);
 
   return (
     <>
@@ -25,8 +26,9 @@ const ProductItem = (props) => {
 
       {isModalOpen && (
         <CartProvider>
-          <ProductsModal
+          <ProductModal
             onCloseModal={closeModalHandler}
+            productId={props.id}
             productImg={props.image}
             productTitle={props.title}
             productPrice={props.price}

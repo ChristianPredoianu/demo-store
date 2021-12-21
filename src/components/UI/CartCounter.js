@@ -1,4 +1,3 @@
-import CartContext from '../../store/cart-context';
 import CartCounterBtn from './CartCounterBtn';
 
 import './CartCounter.scss';

@@ -19,7 +19,13 @@ const NavIcons = (props) => {
       <li className="nav-icons__search" onClick={props.onOpenSearch}>
         {searchIcon}
       </li>
-      <li>{cartIcon}</li>
+      <li
+        className="nav-icons__cart"
+        onMouseEnter={props.onShowCart}
+        onMouseLeave={props.onHideCart}
+      >
+        {cartIcon}
+      </li>
       <li className="nav-icons__hamburger" onClick={props.onToggleMenu}>
         {props.onToggleIcon ? closeIcon : hamburgerIcon}
       </li>

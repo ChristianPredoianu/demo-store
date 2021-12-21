@@ -10,7 +10,7 @@ const ProductItem = (props) => {
 
   const openModalHandler = () => setIsModalOpen(true),
     closeModalHandler = () => setIsModalOpen(false);
-  console.log(props);
+  console.log('rendering');
 
   return (
     <>

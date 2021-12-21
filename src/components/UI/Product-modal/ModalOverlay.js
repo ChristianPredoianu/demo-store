@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useCallback, useMemo } from 'react';
+import { useState, useContext } from 'react';
 import CartCounter from '../CartCounter';
 import CtaBtn from '../CtaBtn';
 import CartContext from '../../../store/cart-context';
@@ -8,7 +8,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import './ModalOverlay.scss';
 
 const ModalOverlay = (props) => {
-  const [cartCounter, setCartCounter] = useState(0);
+  const [cartCounter, setCartCounter] = useState(1);
   const cartCtx = useContext(CartContext);
   const closeIcon = (
     <FontAwesomeIcon
@@ -18,32 +18,37 @@ const ModalOverlay = (props) => {
     />
   );
 
+  console.log(cartCtx);
+
   const productItem = {
     productId: props.productId,
     productImg: props.productImg,
     productTitle: props.productTitle,
     productPrice: props.productPrice,
     amount: cartCounter,
+    totalAmount: cartCtx.totalAmount,
   };
 
+  console.log(cartCtx);
+
   const persistCart = () => {
-    let data = localStorage.getItem('products');
+    /*  let data = localStorage.getItem('products');
     let productData = data ? JSON.parse(data) : [];
-    productData.push(productItem);
-    localStorage.setItem('products', JSON.stringify(productData));
+    productData.push(productItem); */
+    localStorage.setItem('products', JSON.stringify(productItem));
+  };
+
+  const decreaseCartCountHandler = () => {
+    if (cartCounter >= 2) {
+      setCartCounter((prevState) => prevState - 1);
+    }
   };
 
   const increaseCartCountHandler = () =>
     setCartCounter((prevState) => prevState + 1);
 
-  const decreaseCartCountHandler = () => {
-    if (cartCounter >= 1) {
-      setCartCounter((prevState) => prevState - 1);
-    }
-  };
-
   const changeCountHandler = (e) => {
-    if (e.target.value >= 0) {
+    if (e.target.value >= 1) {
       setCartCounter(e.target.value);
     }
   };
@@ -65,8 +70,8 @@ const ModalOverlay = (props) => {
       </div>
       <div className="add-to-cart">
         <CartCounter
+          onDecreaseCartCount={decreaseCartCountHandler}
           onIncreaseCartCount={increaseCartCountHandler}
-          onDecreseCartCount={decreaseCartCountHandler}
           onChangeCount={changeCountHandler}
           cartCount={cartCounter}
         />

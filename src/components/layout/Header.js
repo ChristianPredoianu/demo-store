@@ -15,11 +15,14 @@ const Header = () => {
   const { screenWidth } = useScreenWidth();
   const [showSearch, setShowSearch] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const showSearchHandler = () => setShowSearch(true),
     closeSearchHandler = () => setShowSearch(false),
     toggleNavHandler = () => setToggleMenu(!toggleMenu),
-    closeMobileMenuHandler = () => setToggleMenu(false);
+    closeMobileMenuHandler = () => setToggleMenu(false),
+    showCartHandler = () => setShowCart(true),
+    hideCartHandler = () => setShowCart(false);
 
   useEffect(() => {
     if (screenWidth < 640) {
@@ -45,6 +48,8 @@ const Header = () => {
             onOpenSearch={showSearchHandler}
             onToggleMenu={toggleNavHandler}
             onToggleIcon={toggleMenu}
+            onShowCart={showCartHandler}
+            onHideCart={hideCartHandler}
           />
           <CSSTransition
             in={showSearch}
@@ -54,7 +59,7 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
-          <Cart />
+          {showCart && <Cart />}
         </nav>
       </div>
     </header>

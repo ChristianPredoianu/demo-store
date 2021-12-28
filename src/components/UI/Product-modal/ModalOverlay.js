@@ -18,8 +18,6 @@ const ModalOverlay = (props) => {
     />
   );
 
-  console.log(cartCtx);
-
   const productItem = {
     productId: props.productId,
     productImg: props.productImg,
@@ -27,15 +25,6 @@ const ModalOverlay = (props) => {
     productPrice: props.productPrice,
     amount: cartCounter,
     totalAmount: cartCtx.totalAmount,
-  };
-
-  console.log(cartCtx);
-
-  const persistCart = () => {
-    /*  let data = localStorage.getItem('products');
-    let productData = data ? JSON.parse(data) : [];
-    productData.push(productItem); */
-    localStorage.setItem('products', JSON.stringify(productItem));
   };
 
   const decreaseCartCountHandler = () => {
@@ -55,7 +44,6 @@ const ModalOverlay = (props) => {
 
   const addToCartHandler = () => {
     cartCtx.addToCart(productItem);
-    persistCart();
   };
 
   return (

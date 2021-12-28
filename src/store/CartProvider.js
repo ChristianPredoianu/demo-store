@@ -11,27 +11,16 @@ const cartReducer = (state, action) => {
     const updatedTotalAmount =
       state.totalAmount + action.item.productPrice * action.item.amount;
 
-    const existingCartItemIndex = state.items.findIndex(
-      (item) => item.id === action.item.id
-    );
-    const existingCartItem = state.items[existingCartItemIndex];
-    let updatedItems;
-
-    if (existingCartItem) {
-      const updatedItem = {
-        ...existingCartItem,
-        amount: existingCartItem.amount + action.item.amount,
-      };
-      updatedItems = [...state.items];
-      updatedItems[existingCartItemIndex] = updatedItem;
-    } else {
-      updatedItems = state.items.concat(action.item);
-    }
+    const updatedItems = state.items.concat(action.item);
 
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
     };
+  }
+
+  if (action.type === 'UPDATE_STATE') {
+    return action.value;
   }
 };
 
@@ -40,6 +29,26 @@ const CartProvider = (props) => {
     cartReducer,
     defaultCartState
   );
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('products'))) {
+      //checking if there already is a state in localstorage
+      dispatchCartAction({
+        type: 'UPDATE_STATE',
+        value: JSON.parse(localStorage.getItem('products')),
+        //if yes, update the current state with the stored one
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cartState !== defaultCartState) {
+      localStorage.setItem('products', JSON.stringify(cartState));
+      //create and/or set a new localstorage variable called "state"
+
+      console.log(cartState);
+    }
+  }, [cartState]);
 
   const addProductToCartHandler = (item) => {
     dispatchCartAction({ type: 'ADD', item: item });

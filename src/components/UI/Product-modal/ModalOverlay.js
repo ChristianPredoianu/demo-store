@@ -5,7 +5,7 @@ import CartContext from '../../../store/cart-context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-import './ModalOverlay.scss';
+import classes from './ModalOverlay.module.scss';
 
 const ModalOverlay = (props) => {
   const [cartCounter, setCartCounter] = useState(1);
@@ -49,16 +49,22 @@ const ModalOverlay = (props) => {
   console.log(cartCtx);
 
   return (
-    <div className="modal">
+    <div className={classes.modal}>
       {closeIcon}
-      <div className="product">
-        <img src={props.productImg} alt="product" className="product__img" />
-        <div className="product__product-info">
-          <h3 className="product__title">{props.productTitle}</h3>
-          <p className="product__price">{'$ ' + props.productPrice}</p>
+      <div className={classes.product}>
+        <img
+          src={props.productImg}
+          alt="product"
+          className={classes['product__img']}
+        />
+        <div className={classes['product__product-info']}>
+          <h3 className={classes['product__title']}>{props.productTitle}</h3>
+          <p className={classes['product__price']}>
+            {'$ ' + props.productPrice}
+          </p>
         </div>
       </div>
-      <div className="add-to-cart">
+      <div className={classes['add-to-cart']}>
         <CartCounter
           onDecreaseCartCount={decreaseCartCountHandler}
           onIncreaseCartCount={increaseCartCountHandler}

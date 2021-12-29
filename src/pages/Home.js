@@ -8,7 +8,7 @@ import womensImg from '../assets/images/womens-clothing.jpg';
 import menImg from '../assets/images/mens-clothing.jpg';
 import jewleryImg from '../assets/images/jewlery.jpg';
 
-import './Home.scss';
+import classes from './Home.module.scss';
 
 const Home = () => {
   const { productsData, isLoadingData, error } = useApi(
@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="hero">
+      <div className={classes.hero}>
         <div className="container">
           <HeroSlide />
         </div>
@@ -50,9 +50,9 @@ const Home = () => {
         {isLoadingData && <LoadingSpinner />}
         {!isLoadingData && (
           <>
-            <section className="categories">{categoryCard}</section>
-            <section className="products">
-              <h3 className="products-heading">Products Overview</h3>
+            <section className={classes.categories}>{categoryCard}</section>
+            <section className={classes.products}>
+              <h3 className={classes['products-heading']}>Products Overview</h3>
               <Products products={productsData} />
             </section>
           </>

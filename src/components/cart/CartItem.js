@@ -1,13 +1,15 @@
+import classes from './CartItem.module.scss';
+
 const CartItem = (props) => {
   return (
-    <div className="cart-item">
-      <img src={props.img} alt="" className="product-img" />
-      <div className="product-details">
-        <p className="product-details__title">{props.title}</p>
-        <p className="product-details__price">{props.price}</p>
-        <p className="product-details__amount">{props.amount}</p>
+    <div className={classes['cart-item']}>
+      <img src={props.img} alt="" className={classes['product-img']} />
+      <div className={classes['product-details']}>
+        <p className={classes['product-details__title']}>{props.title}</p>
+        <p className={classes['product-details__price']}>{props.price}</p>
+        <p className={classes['product-details__amount']}>{props.amount}</p>
       </div>
-      <p className="remove-product"></p>
+      <p className={classes['remove-product']}></p>
     </div>
   );
 };

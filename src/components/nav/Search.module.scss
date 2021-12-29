@@ -1,0 +1,36 @@
+@use '../../sass/abstracts/' as *;
+
+.search {
+  width: 100vw;
+  height: 100vh;
+  @include position($pos: fixed, $top: 0, $left: 0);
+  @include flex-config(
+    $display: flex,
+    $direction: column,
+    $justify: center,
+    $align: center
+  );
+  background-color: rgb(255, 255, 255, 0.7);
+  z-index: 100;
+
+  &__close-icon {
+    margin: 0 0 2rem 19rem;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}
+
+.search-input {
+  position: relative;
+
+  &__input {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  &__search-icon {
+    @include position($pos: absolute, $top: 1rem, $right: 1rem);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

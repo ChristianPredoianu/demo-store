@@ -6,7 +6,7 @@ import {
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-import './NavIcons.scss';
+import classes from './NavIcons.module.scss';
 
 const NavIcons = (props) => {
   const searchIcon = <FontAwesomeIcon icon={faSearch} />,
@@ -15,18 +15,21 @@ const NavIcons = (props) => {
     closeIcon = <FontAwesomeIcon icon={faTimes} />;
 
   return (
-    <ul className="nav-icons">
-      <li className="nav-icons__search" onClick={props.onOpenSearch}>
+    <ul className={classes['nav-icons']}>
+      <li className={classes['nav-icons__search']} onClick={props.onOpenSearch}>
         {searchIcon}
       </li>
       <li
-        className="nav-icons__cart"
+        className={classes['nav-icons__cart']}
         onMouseEnter={props.onShowCart}
         onMouseLeave={props.onHideCart}
       >
         {cartIcon}
       </li>
-      <li className="nav-icons__hamburger" onClick={props.onToggleMenu}>
+      <li
+        className={classes['nav-icons__hamburger']}
+        onClick={props.onToggleMenu}
+      >
         {props.onToggleIcon ? closeIcon : hamburgerIcon}
       </li>
     </ul>

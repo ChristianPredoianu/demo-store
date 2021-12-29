@@ -46,6 +46,8 @@ const ModalOverlay = (props) => {
     cartCtx.addToCart(productItem);
   };
 
+  console.log(cartCtx);
+
   return (
     <div className="modal">
       {closeIcon}

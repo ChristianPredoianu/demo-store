@@ -21,7 +21,7 @@ const ProductItem = (props) => {
             alt="product"
             className={classes['product-img']}
           />
-          <div className="product-info">
+          <div className={classes['product-info']}>
             <h4>{props.title}</h4>
             <h5>{props.price} $</h5>
           </div>

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
-import useScreenWidth from '../../../hooks/useScreenWidth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
+
+import useScreenWidth from '../../../hooks/useScreenWidth';
 import ProductsFilterList from './ProductsFilterList';
 
-import './ProductsFilter.scss';
+import classes from './ProductsFilter.module.scss';
 
 const ProductsFilter = (props) => {
-  const [isFilterOpen, setIsFilterOpen] = useState(),
-    { screenWidth } = useScreenWidth(),
-    filterIcon = <FontAwesomeIcon icon={faFilter} />;
+  const [isFilterOpen, setIsFilterOpen] = useState();
+  const { screenWidth } = useScreenWidth();
+
+  const filterIcon = <FontAwesomeIcon icon={faFilter} />;
 
   const toggleFilterHandler = () => setIsFilterOpen(!isFilterOpen);
 
@@ -20,8 +22,11 @@ const ProductsFilter = (props) => {
   }, [screenWidth]);
 
   return (
-    <section className="products-filter">
-      <button className="filter-btn-toggler" onClick={toggleFilterHandler}>
+    <section className={classes['products-filter']}>
+      <button
+        className={classes['filter-btn-toggler']}
+        onClick={toggleFilterHandler}
+      >
         {filterIcon} <span>Filter</span>
       </button>
 

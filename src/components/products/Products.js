@@ -1,6 +1,6 @@
 import ProductItem from './ProductItem';
 
-import './Products.scss';
+import classes from './Products.modal.scss';
 
 const Products = (props) => {
   let output;
@@ -26,7 +26,7 @@ const Products = (props) => {
 
   return (
     <>
-      <section className="section-products">{output}</section>
+      <section className={classes['section-products']}>{output}</section>
     </>
   );
 };

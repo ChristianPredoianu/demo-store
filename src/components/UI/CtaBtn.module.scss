@@ -1,0 +1,18 @@
+@use '../../sass/abstracts/' as *;
+
+.cta-btn {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  line-height: 1.466667;
+  border-radius: 2.3rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-black);
+  }
+}

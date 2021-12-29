@@ -1,8 +1,8 @@
 @use '../../sass/abstracts/' as *;
 
 .product-wrapper {
-  height: 100%;
   @include flex-config($direction: column, $justify: space-between);
+  height: 100%;
   padding: 3rem 2rem 2rem 2rem;
 }
 

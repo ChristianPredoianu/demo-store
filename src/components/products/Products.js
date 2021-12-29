@@ -1,6 +1,6 @@
 import ProductItem from './ProductItem';
 
-import classes from './Products.modal.scss';
+import classes from './Products.module.scss';
 
 const Products = (props) => {
   let output;

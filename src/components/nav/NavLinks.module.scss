@@ -1,0 +1,29 @@
+@use '../../sass/abstracts/' as *;
+
+.nav-links {
+  background-color: rgb(201, 201, 201);
+  @include position($pos: fixed, $top: 0, $left: 0);
+  @include flex-config(
+    $direction: column,
+    $justify: space-evenly,
+    $align: center
+  );
+  height: 50vh;
+  width: 100vw;
+  z-index: 5;
+
+  @include respond(sm) {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background-color: transparent;
+  }
+
+  &__link {
+    font-size: clamp(1.5rem, 0.8vw + 0.1rem, 1.7vw);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--clr-gray-light);
+  }
+}

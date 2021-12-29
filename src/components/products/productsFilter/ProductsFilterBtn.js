@@ -1,4 +1,4 @@
-import './ProductsFilterBtn.scss';
+import classes from './ProductsFilterBtn.module.scss';
 
 const ProductsFilterBtn = (props) => {
   const category =
@@ -7,7 +7,7 @@ const ProductsFilterBtn = (props) => {
 
   return (
     <button
-      className="filter-btn"
+      className={classes['filter-btn']}
       onClick={() => props.onClickedCategory(props.category.category)}
     >
       {category}

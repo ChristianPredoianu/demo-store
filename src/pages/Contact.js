@@ -1,3 +1,5 @@
+import classes from './Contact.module.scss';
+
 const Contact = () => {
   return <h1>Contact</h1>;
 };

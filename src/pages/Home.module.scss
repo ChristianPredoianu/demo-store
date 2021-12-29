@@ -1,0 +1,24 @@
+@use '../sass/abstracts/' as *;
+
+.hero {
+  background-color: var(--clr-gray-light);
+  padding: 0 0.5rem;
+}
+
+.categories {
+  display: grid;
+  justify-content: center;
+  grid-row-gap: 10rem;
+  padding: var(--section-spacing) 5rem;
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+  }
+}
+
+.products-heading {
+  font-size: clamp(2.5rem, 2vw + 0.1rem, 3.8rem);
+  margin-top: 5rem;
+  text-transform: uppercase;
+}

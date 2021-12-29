@@ -1,8 +1,8 @@
-import './Cta-btn.scss';
+import classes from './CtaBtn.module.scss';
 
 const CtaBtn = (props) => {
   return (
-    <button className="cta-btn" onClick={props.handleClick}>
+    <button className={classes['cta-btn']} onClick={props.handleClick}>
       {props.children}
     </button>
   );

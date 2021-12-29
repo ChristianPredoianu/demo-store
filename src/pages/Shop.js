@@ -5,15 +5,16 @@ import ProductsFilter from '../components/products/productsFilter/ProductsFilter
 import Products from '../components/products/Products';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 
-import './Shop.scss';
+import classes from './Shop.module.scss';
 
 const Shop = () => {
   const { state } = useLocation(),
     category = state,
     { productsData, isLoadingData, error } = useApi(
       'https://fakestoreapi.com/products'
-    ),
-    [initialCategory, setInitialCategory] = useState(null),
+    );
+
+  const [initialCategory, setInitialCategory] = useState(null),
     [filteredProducts, setFilteredProducts] = useState('all');
 
   let products, output, userFilteredProducts;

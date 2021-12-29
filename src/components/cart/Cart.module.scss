@@ -1,0 +1,8 @@
+@use '../../sass/abstracts/' as *;
+
+.cart {
+  position: absolute;
+  top: 6rem;
+  right: 0;
+  background-color: red;
+}

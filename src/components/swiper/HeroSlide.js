@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import SwiperContent from './SwiperContent';
 
-import './HeroSlide.scss';
+import classes from './HeroSlide.module.scss';
 
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
@@ -19,7 +19,7 @@ const HeroSlide = () => {
         delay: 5000,
         disableOnInteraction: false,
       }} */
-      className="hero-swiper"
+      className={classes['hero-swiper']}
     >
       <SwiperSlide>
         <SwiperContent

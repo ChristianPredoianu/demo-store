@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
-
 import CartItem from './CartItem';
 import CtaBtn from '../UI/CtaBtn';
 
-import './Cart.scss';
 import CartContext from '../../store/cart-context';
+
+import classes from './Cart.module.scss';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState(null);
@@ -25,10 +25,10 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart">
+    <div className={classes.cart}>
       <h3>Cart</h3>
       {cartItem}
-      <p className="total-amount">Total Amount: </p>
+      <p className={classes['total-amount']}>Total Amount: </p>
       <CtaBtn>Checkout</CtaBtn>
     </div>
   );

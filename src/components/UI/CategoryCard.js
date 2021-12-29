@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
 
-import './CategoryCard.scss';
+import classes from './CategoryCard.module.scss';
 
 const CategoryCard = (props) => {
   const navigate = useNavigate();
@@ -16,13 +16,13 @@ const CategoryCard = (props) => {
 
   return (
     <Card>
-      <div className="card-wrapper" onClick={goToShopHandler}>
-        <h5 className="card-wrapper__heading">{cardHeading}</h5>
-        <h6 className="card-wrapper__subheading">Spring 2022</h6>
+      <div className={classes['card-wrapper']} onClick={goToShopHandler}>
+        <h5 className={classes['card-wrapper__heading']}>{cardHeading}</h5>
+        <h6 className={classes['card-wrapper__subheading']}>Spring 2022</h6>
         <img
           src={props.category.categoryImg}
           alt="category"
-          className="card-wrapper__img"
+          className={classes['card-wrapper__img']}
         />
       </div>
     </Card>

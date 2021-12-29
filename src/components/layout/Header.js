@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import useScreenWidth from '../../hooks/useScreenWidth';
 import { CSSTransition } from 'react-transition-group';
+import useScreenWidth from '../../hooks/useScreenWidth';
 
 import TopHeader from '../nav/TopHeader';
 import logo from '../../assets/images/fakestore2.png';
@@ -9,13 +9,13 @@ import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
 import Cart from '../cart/Cart';
 
-import './Header.scss';
+import classes from './Header.module.scss';
 
 const Header = () => {
-  const { screenWidth } = useScreenWidth();
-  const [showSearch, setShowSearch] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [showCart, setShowCart] = useState(false);
+  const { screenWidth } = useScreenWidth(),
+    [showSearch, setShowSearch] = useState(false),
+    [toggleMenu, setToggleMenu] = useState(false),
+    [showCart, setShowCart] = useState(false);
 
   const showSearchHandler = () => setShowSearch(true),
     closeSearchHandler = () => setShowSearch(false),
@@ -34,12 +34,16 @@ const Header = () => {
     <header>
       <TopHeader />
       <div className="container">
-        <nav className="nav">
-          <img src={logo} alt="Store logo" className="nav__logo" />
+        <nav className={classes.nav}>
+          <img src={logo} alt="Store logo" className={classes.nav__logo} />
           <CSSTransition
             in={toggleMenu || screenWidth > 640}
             timeout={300}
-            classNames="slide"
+            classNames={{
+              enter: classes['slide-enter'],
+              enterActive: classes['slide-enter-active'],
+              exitActive: classes['slide-exit-active'],
+            }}
             unmountOnExit
           >
             <NavLinks onCloseMobileMenu={closeMobileMenuHandler} />
@@ -54,7 +58,11 @@ const Header = () => {
           <CSSTransition
             in={showSearch}
             timeout={300}
-            classNames="slide"
+            classNames={{
+              enter: classes['slide-enter'],
+              enterActive: classes['slide-enter-active'],
+              exitActive: classes['slide-exit-active'],
+            }}
             unmountOnExit
           >
             <Search onClose={closeSearchHandler} />

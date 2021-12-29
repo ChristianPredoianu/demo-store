@@ -1,8 +1,8 @@
-import './TopHeader.scss';
+import classes from './TopHeader.module.scss';
 
 const TopHeader = () => {
   return (
-    <div className="top-header">
+    <div className={classes['top-header']}>
       <div className="container">
         <p>Free Shipping for standard order over 100$</p>
       </div>

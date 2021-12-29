@@ -1,6 +1,6 @@
 import ProductsFilterBtn from './ProductsFilterBtn';
 
-import './ProductsFilterList.scss';
+import classes from './ProductsFilterList.module.scss';
 
 const ProductsFilterList = (props) => {
   let categoriesArray = [];
@@ -25,7 +25,7 @@ const ProductsFilterList = (props) => {
     />
   ));
 
-  return <div className="filter-list">{filterBtn}</div>;
+  return <div className={classes['filter-list']}>{filterBtn}</div>;
 };
 
 export default ProductsFilterList;

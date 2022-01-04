@@ -1,0 +1,25 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+
+  margin-top: 5rem;
+}
+
+.product-img {
+  width: 5rem;
+}
+
+.product-details {
+  padding: 0 2rem;
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__remove-product {
+    padding: 1rem 0;
+    color: red;
+    cursor: pointer;
+  }
+}

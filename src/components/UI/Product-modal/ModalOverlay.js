@@ -10,6 +10,8 @@ import classes from './ModalOverlay.module.scss';
 const ModalOverlay = (props) => {
   const [cartCounter, setCartCounter] = useState(1);
   const cartCtx = useContext(CartContext);
+
+  console.log(cartCtx);
   const closeIcon = (
     <FontAwesomeIcon
       icon={faTimesCircle}
@@ -45,8 +47,6 @@ const ModalOverlay = (props) => {
   const addToCartHandler = () => {
     cartCtx.addToCart(productItem);
   };
-
-  console.log(cartCtx);
 
   return (
     <div className={classes.modal}>

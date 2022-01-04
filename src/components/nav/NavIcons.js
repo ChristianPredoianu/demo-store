@@ -21,8 +21,8 @@ const NavIcons = (props) => {
       </li>
       <li
         className={classes['nav-icons__cart']}
-        onMouseEnter={props.onShowCart}
-        onMouseLeave={props.onHideCart}
+        onClick={props.onShowCart}
+        /*  onMouseLeave={props.onHideCart} */
       >
         {cartIcon}
       </li>

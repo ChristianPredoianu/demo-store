@@ -9,6 +9,8 @@ import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
 import Cart from '../cart/Cart';
 
+import CartProvider from '../../store/CartProvider';
+
 import classes from './Header.module.scss';
 
 const Header = () => {
@@ -29,6 +31,8 @@ const Header = () => {
       setToggleMenu(false);
     }
   }, [screenWidth]);
+
+  console.log(showCart);
 
   return (
     <header>
@@ -67,7 +71,11 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
-          {showCart && <Cart />}
+          {showCart && (
+            <CartProvider>
+              <Cart />
+            </CartProvider>
+          )}
         </nav>
       </div>
     </header>

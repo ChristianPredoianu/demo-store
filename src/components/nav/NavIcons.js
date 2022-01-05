@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
   faSearch,
   faShoppingCart,
@@ -21,11 +22,12 @@ const NavIcons = (props) => {
       </li>
       <li
         className={classes['nav-icons__cart']}
-        onClick={props.onShowCart}
-        /*  onMouseLeave={props.onHideCart} */
+        onMouseEnter={props.onShowCart}
       >
         {cartIcon}
       </li>
+      <div className={classes.number}></div>
+      <div className={classes.counter}></div>
       <li
         className={classes['nav-icons__hamburger']}
         onClick={props.onToggleMenu}

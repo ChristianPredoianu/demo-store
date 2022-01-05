@@ -1,7 +1,7 @@
-.cart-item {
-  display: flex;
-  align-items: center;
+@use '../../sass/abstracts/' as *;
 
+.cart-item {
+  @include flex-config($align: center);
   margin-top: 5rem;
 }
 
@@ -10,6 +10,7 @@
 }
 
 .product-details {
+  @include flex-config($direction: column);
   padding: 0 2rem;
 
   &__title {
@@ -17,9 +18,17 @@
     margin-bottom: 1rem;
   }
 
+  &__amount {
+    padding: 1rem 0;
+  }
+
+  &__counter {
+    padding: 1rem 0;
+  }
+
   &__remove-product {
     padding: 1rem 0;
-    color: red;
+    color: #ff0000;
     cursor: pointer;
   }
 }

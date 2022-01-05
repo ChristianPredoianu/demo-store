@@ -25,7 +25,9 @@
   }
 
   &__cart {
+    position: relative;
     cursor: pointer;
+    padding: 1rem;
   }
 
   &__hamburger {
@@ -36,4 +38,9 @@
       display: none;
     }
   }
+}
+
+.number {
+  position: absolute;
+  right: -0.5rem;
 }

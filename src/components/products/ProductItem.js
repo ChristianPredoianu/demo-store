@@ -2,8 +2,6 @@ import { useState } from 'react';
 import ProductModal from '../UI/Product-modal/ProductModal';
 import Card from '../UI/Card';
 
-import CartProvider from '../../store/CartProvider';
-
 import classes from './ProductItem.module.scss';
 
 const ProductItem = (props) => {
@@ -29,15 +27,13 @@ const ProductItem = (props) => {
       </Card>
 
       {isModalOpen && (
-        <CartProvider>
-          <ProductModal
-            onCloseModal={closeModalHandler}
-            productId={props.id}
-            productImg={props.image}
-            productTitle={props.title}
-            productPrice={props.price}
-          />
-        </CartProvider>
+        <ProductModal
+          onCloseModal={closeModalHandler}
+          productId={props.id}
+          productImg={props.image}
+          productTitle={props.title}
+          productPrice={props.price}
+        />
       )}
     </>
   );

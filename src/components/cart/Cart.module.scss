@@ -1,21 +1,24 @@
 @use '../../sass/abstracts/' as *;
 
 .cart {
-  position: absolute;
-  top: 8rem;
-  right: 0;
-  background-color: white;
-  border: 2px solid black;
+  @include position($pos: absolute, $top: 8rem, $right: 0);
+  background-color: var(--clr-white);
+  border: 2px solid var(--clr-black);
   padding: 2rem;
 
   &__heading {
+    font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    font-size: 2rem;
   }
 
   &__total-amount {
     margin: 3rem 0;
   }
+}
+
+.empty {
+  font-size: 2rem;
+  padding: 5rem 2rem;
 }

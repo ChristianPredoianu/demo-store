@@ -5,6 +5,7 @@
   background-color: var(--clr-white);
   border: 2px solid var(--clr-black);
   padding: 2rem;
+  z-index: 1000;
 
   &__heading {
     font-size: 2rem;

@@ -8,8 +8,7 @@ import NavLinks from '../nav/NavLinks';
 import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
 import Cart from '../cart/Cart';
-
-import CartProvider from '../../store/CartProvider';
+import ItemsCount from '../cart/ItemsCount';
 
 import classes from './Header.module.scss';
 
@@ -33,6 +32,7 @@ const Header = () => {
   }, [screenWidth]);
 
   console.log(showCart);
+  console.log('rendering header');
 
   return (
     <header>
@@ -52,6 +52,7 @@ const Header = () => {
           >
             <NavLinks onCloseMobileMenu={closeMobileMenuHandler} />
           </CSSTransition>
+
           <NavIcons
             onOpenSearch={showSearchHandler}
             onToggleMenu={toggleNavHandler}
@@ -59,6 +60,7 @@ const Header = () => {
             onShowCart={showCartHandler}
             onHideCart={hideCartHandler}
           />
+
           <CSSTransition
             in={showSearch}
             timeout={300}
@@ -71,11 +73,9 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
-          {showCart && (
-            <CartProvider>
-              <Cart />
-            </CartProvider>
-          )}
+          {showCart && <Cart onHideCart={hideCartHandler} />}
+
+          <ItemsCount />
         </nav>
       </div>
     </header>

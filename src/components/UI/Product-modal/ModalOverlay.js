@@ -15,7 +15,7 @@ const ModalOverlay = (props) => {
   const closeIcon = (
     <FontAwesomeIcon
       icon={faTimesCircle}
-      className="close-modal-icon"
+      className={classes['close-modal-icon']}
       onClick={props.onClose}
     />
   );
@@ -64,7 +64,7 @@ const ModalOverlay = (props) => {
           </p>
         </div>
       </div>
-      <div className={classes['add-to-cart']}>
+      <div className={classes.counter}>
         <CartCounter
           onDecreaseCartCount={decreaseCartCountHandler}
           onIncreaseCartCount={increaseCartCountHandler}
@@ -72,6 +72,8 @@ const ModalOverlay = (props) => {
           cartCount={cartCounter}
         />
       </div>
+
+      <div className={classes['add-to-cart']}></div>
       <CtaBtn handleClick={addToCartHandler}>Add to cart</CtaBtn>
     </div>
   );

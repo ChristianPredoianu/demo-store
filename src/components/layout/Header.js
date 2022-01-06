@@ -74,8 +74,9 @@ const Header = () => {
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
           {showCart && <Cart onHideCart={hideCartHandler} />}
-
-          <ItemsCount />
+          <div className={classes.counter}>
+            <ItemsCount />
+          </div>
         </nav>
       </div>
     </header>

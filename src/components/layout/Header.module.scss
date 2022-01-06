@@ -21,6 +21,10 @@
   }
 }
 
+.counter {
+  @include position($pos: absolute, $top: 1.3rem, $right: 5rem);
+}
+
 .slide-enter {
   transform: translateY(-100%);
 }

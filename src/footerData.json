@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "heading": "Categories",
+    "listItem1": "Women",
+    "listItem2": "Men",
+    "listItem3": "Electronics",
+    "listItem4": "Jewlery"
+  },
+  {
+    "id": "2",
+    "heading": "Help",
+    "listItem1": "Track Order",
+    "listItem2": "Returns",
+    "listItem3": "Shipping",
+    "listItem4": "Faq"
+  },
+  {
+    "id": "3",
+    "heading": "Get In Touch",
+    "listItem1": "Contact us for any kind of questions"
+  },
+  {
+    "id": "4",
+    "heading": "Newsletter",
+    "listItem1": "contact@fakestore.com"
+  }
+]

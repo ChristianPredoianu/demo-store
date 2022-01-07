@@ -1,3 +1,5 @@
+import VanillaTilt from 'vanilla-tilt';
+
 import classes from './Card.module.scss';
 
 const Card = (props) => {

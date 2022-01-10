@@ -1,7 +1,16 @@
 @use '../../../sass/abstracts/' as *;
 
 .footer {
-  background-color: var(--clr-black);
+  background-color: var(--clr-gray-dark);
   color: var(--clr-white);
-  padding: 2rem;
+  padding: 4rem 2rem;
+}
+
+.dsa {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
 }

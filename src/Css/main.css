@@ -66,6 +66,7 @@ body {
   --clr-blue: #717fe0;
   --clr-gray-light: #e6e6e6;
   --clr-gray-medium: #acabab;
+  --clr-gray-dark: #222;
   --section-spacing: 7rem;
 }
 @media (min-width: 40em) {

@@ -48,11 +48,13 @@ const Shop = () => {
 
   return (
     <div className="container">
-      <ProductsFilter
-        onFilteredProducts={filteredProductsHandler}
-        productsData={productsData}
-      />
-      {output}
+      <section className={classes.products}>
+        <ProductsFilter
+          onFilteredProducts={filteredProductsHandler}
+          productsData={productsData}
+        />
+        {output}
+      </section>
     </div>
   );
 };

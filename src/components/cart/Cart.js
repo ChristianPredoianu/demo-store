@@ -4,6 +4,10 @@ import CtaBtn from '../UI/CtaBtn';
 
 import CartContext from '../../store/cart-context';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import classes from './Cart.module.scss';
 
 const Cart = (props) => {
@@ -12,6 +16,14 @@ const Cart = (props) => {
   const { items, totalAmount } = cartCtx;
 
   const hasCartItems = items.length > 0;
+
+  const closeIcon = (
+    <FontAwesomeIcon
+      icon={faTimes}
+      className={classes.close}
+      onClick={props.onHideCart}
+    />
+  );
 
   const addToCartHandler = (item) => {
     cartCtx.addToCart({ ...item, amount: 1 });
@@ -36,6 +48,7 @@ const Cart = (props) => {
 
   return (
     <div className={classes.cart} onMouseLeave={props.onHideCart}>
+      {closeIcon}
       <h3 className={classes['cart__heading']}>Cart</h3>
       {cartItems}
       {hasCartItems && (

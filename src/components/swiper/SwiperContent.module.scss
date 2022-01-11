@@ -1,33 +1,19 @@
 @use '../../sass/abstracts/' as *;
 
 .slide-container {
-  position: relative;
   @include flex-config($align: center);
   height: 100%;
   margin: 0 auto;
-  background-position: right;
-  background-repeat: no-repeat;
   background-color: var(--clr-gray-light);
-
-  /*  @include respond(lg) {
-    width: 80%;
-  } */
-
-  &--1 {
-    background-image: url('../../assets/images/man1.jpg');
-  }
-
-  &--2 {
-    background-image: url('../../assets/images/man1.jpg');
-  }
-
-  &--3 {
-    background-image: url('../../assets/images/man1.jpg');
-  }
+  margin-right: 1rem;
 }
 
 .cta-wrapper {
   margin-left: 1rem;
+
+  @include respond(md) {
+    margin: 0 auto;
+  }
 }
 
 .swiper-heading-primary {
@@ -38,4 +24,12 @@
 .swiper-heading-secondary {
   font-size: 4rem;
   margin: 2rem 0 3rem 0;
+}
+
+.cta-btn {
+  margin-top: 2rem;
+}
+
+.img {
+  margin: 0 auto;
 }

@@ -1,0 +1,9 @@
+@use '../../sass/abstracts/' as *;
+
+.scroll-to-top {
+  @include position($pos: fixed, $bottom: 2rem, $right: 2rem);
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: var(--clr-blue);
+  cursor: pointer;
+}

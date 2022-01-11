@@ -1,5 +1,5 @@
 import useApi from '../hooks/useApi';
-import HeroSlide from '../components/swiper/HeroSlide';
+import HeroSlider from '../components/swiper/HeroSlider';
 import CategoryCard from '../components/UI/CategoryCard';
 import Products from '../components/products/Products';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
@@ -43,7 +43,7 @@ const Home = () => {
     <>
       <div className={classes.hero}>
         <div className="container">
-          <HeroSlide />
+          <HeroSlider />
         </div>
       </div>
       <div className="container">

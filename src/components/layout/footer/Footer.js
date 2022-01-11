@@ -1,5 +1,4 @@
 import FooterList from './FooterList';
-import CtaBtn from '../../UI/CtaBtn';
 
 import footerData from '../../../footerData.json';
 
@@ -23,11 +22,7 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <div className={classes.dsa}> {footerListItem}</div>
-
-      <div className={classes.cta}>
-        <CtaBtn>Subscribe</CtaBtn>
-      </div>
+      <div className={classes['footer-lists']}>{footerListItem}</div>
     </footer>
   );
 };

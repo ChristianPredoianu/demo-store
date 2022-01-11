@@ -23,6 +23,7 @@ const NavIcons = (props) => {
       <li
         className={classes['nav-icons__cart']}
         onMouseEnter={props.onShowCart}
+        onClick={props.onShowCart}
       >
         {cartIcon}
       </li>

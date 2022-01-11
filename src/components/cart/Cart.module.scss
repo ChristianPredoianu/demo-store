@@ -19,6 +19,12 @@
   }
 }
 
+.close {
+  @include position($pos: absolute, $top: 2rem, $right: 2rem);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .empty {
   font-size: 2rem;
   padding: 5rem 2rem;

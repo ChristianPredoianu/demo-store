@@ -12,5 +12,8 @@
     @include position($pos: absolute, $top: 4rem, $left: 1rem);
     font-size: clamp(1.5rem, 0.7vw + 0.1rem, 2rem);
     font-weight: normal;
+    color: white;
+    background-color: rgba(6, 3, 170, 0.5);
+    padding: 0.5rem 0;
   }
 }

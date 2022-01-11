@@ -1,5 +1,4 @@
 import CtaBtn from '../UI/CtaBtn';
-import img1 from '../../assets/images/man1.jpg';
 
 import classes from './SwiperContent.module.scss';
 
@@ -13,8 +12,11 @@ const SwiperContent = (props) => {
         <h2 className={classes['swiper-heading-secondary']}>
           {props.headingSecondary}
         </h2>
-        <img src={img1} alt="" />
-        <CtaBtn>Shop Now</CtaBtn>
+
+        <img src={props.img} alt="category" className={classes.img} />
+        <div className={classes['cta-btn']}>
+          <CtaBtn>Shop Now</CtaBtn>
+        </div>
       </div>
     </div>
   );

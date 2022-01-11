@@ -13,7 +13,6 @@ ReactDOM.render(
         <App />
       </CartProvider>
     </BrowserRouter>
-    ,
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -5,8 +5,6 @@ import footerData from '../../../footerData.json';
 import classes from './Footer.module.scss';
 
 const Footer = () => {
-  console.log(footerData);
-
   const footerListItem = footerData.map((listItem) => {
     return (
       <FooterList

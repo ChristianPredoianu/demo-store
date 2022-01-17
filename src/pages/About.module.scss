@@ -22,6 +22,76 @@
   transform: translate(-50%, -50%);
 }
 
+.story-section {
+  @include respond(md) {
+    @include flex-config($justify: space-between, $align: center);
+  }
+}
+
 .story {
   margin: var(--section-spacing) 0;
+
+  @include respond(md) {
+    margin: 0;
+    width: 60%;
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+  }
+
+  &__quote {
+    position: relative;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 0 2rem;
+
+    &::before {
+      @include pseudo($top: 0, $left: 1rem);
+      border-left: 1.5px solid var(--clr-gray-medium);
+      height: 100%;
+    }
+  }
+
+  &__quote-author {
+    font-style: normal;
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+}
+
+.story-img-wrapper {
+  width: 70%;
+  position: relative;
+  margin: 0 auto;
+
+  @include respond(md) {
+    width: 30%;
+    margin: 0;
+  }
+
+  &::after {
+    @include pseudo($bottom: -1rem, $left: 1rem);
+    border: 2px solid var(--clr-gray-medium);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+    @include respond(md) {
+      @include pseudo($top: -2rem, $right: 0);
+    }
+  }
+}
+
+.mission-section {
+  margin: var(--section-spacing) 0;
+  @include respond(md) {
+    @include flex-config($justify: space-between, $align: center);
+    flex-direction: row-reverse;
+  }
 }

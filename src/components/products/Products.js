@@ -5,6 +5,8 @@ import classes from './Products.module.scss';
 const Products = (props) => {
   let output;
 
+  console.log(props);
+
   if (props.products !== null) {
     output = props.products.map((product) => (
       <ProductItem

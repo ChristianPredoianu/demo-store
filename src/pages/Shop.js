@@ -8,11 +8,11 @@ import LoadingSpinner from '../components/UI/LoadingSpinner';
 import classes from './Shop.module.scss';
 
 const Shop = () => {
-  const { state } = useLocation(),
-    category = state,
-    { productsData, isLoadingData, error } = useApi(
-      'https://fakestoreapi.com/products'
-    );
+  const { state } = useLocation();
+  const category = state;
+  const { productsData, isLoadingData, error } = useApi(
+    'https://fakestoreapi.com/products'
+  );
 
   const [initialCategory, setInitialCategory] = useState(null),
     [filteredProducts, setFilteredProducts] = useState('all');

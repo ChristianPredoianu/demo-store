@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Search.module.scss';
 
 const Search = (props) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const inputRef = useRef(null);
   const navigate = useNavigate();
 
-  const searchTermHandler = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
-
   const searchHandler = () => {
-    navigate('/usersearch', { replace: true }, { state: searchTerm });
+    const searchTerm = inputRef.current.value;
+
+    navigate(`/usersearch?q=${createSearchParams(searchTerm)}`, {
+      state: searchTerm,
+    });
     props.onClose();
   };
 
@@ -30,7 +30,7 @@ const Search = (props) => {
         <input
           type="text"
           placeholder="Search"
-          onChange={searchTermHandler}
+          ref={inputRef}
           className={classes['search-input__input']}
         />
         <FontAwesomeIcon

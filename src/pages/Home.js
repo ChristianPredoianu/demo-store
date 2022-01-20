@@ -42,7 +42,7 @@ const Home = () => {
     <>
       <div className={classes.hero}>
         <div className="container">
-          <HeroSlider />
+          <HeroSlider productsData={productsData} />
         </div>
       </div>
       <div className="container">

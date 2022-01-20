@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate, createSearchParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -12,9 +12,13 @@ const Search = (props) => {
   const searchHandler = () => {
     const searchTerm = inputRef.current.value;
 
-    navigate(`/usersearch?q=${createSearchParams(searchTerm)}`, {
-      state: searchTerm,
-    });
+    navigate(
+      `/usersearch?q=${createSearchParams(searchTerm)}`,
+
+      {
+        state: searchTerm,
+      }
+    );
     props.onClose();
   };
 

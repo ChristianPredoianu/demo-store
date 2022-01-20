@@ -11,38 +11,44 @@ import classes from './UserSearch.module.scss';
 const UserSearch = () => {
   const { state } = useLocation();
   const [filterCategory, setFilterCategory] = useState(null);
-  const [isUserSearch, setIsUserSearch] = useState(true);
 
   const { productsData, isLoadingData, error } = useApi(
     'https://fakestoreapi.com/products'
   );
 
-  let searchFilteredProducts, filteredProducts;
+  const searchTerm = state.charAt(0).toUpperCase() + state.slice(1);
+
+  let searchFilteredProducts,
+    filteredProducts,
+    isProductsFound = false;
 
   if (!isLoadingData) {
     searchFilteredProducts = productsData.filter((product) =>
       product.title.toLowerCase().includes(state)
     );
-    console.log(searchFilteredProducts);
+
+    filterCategory === 'all'
+      ? (filteredProducts = productsData)
+      : (filteredProducts = productsData.filter(
+          (product) => product.category === filterCategory
+        ));
+  }
+
+  if (
+    !isLoadingData &&
+    searchFilteredProducts.length === 0 &&
+    filteredProducts.length === 0
+  ) {
+    isProductsFound = true;
   }
 
   const filteredProductsHandler = (selectedCategory) => {
     setFilterCategory(selectedCategory);
-    setIsUserSearch(false);
   };
 
-  if (!isLoadingData) {
-    filteredProducts = productsData.filter(
-      (product) => product.category === filterCategory
-    );
-
-    /// ------ADD THIS------------
-    /*   filteredProducts === 'all'
-    ? (userFilteredProducts = productsData)
-    : (userFilteredProducts = productsData.filter(
-        (product) => product.category === filteredProducts
-      )); */
-  }
+  const resetFilterHandler = () => {
+    setFilterCategory(null);
+  };
 
   return (
     <div className="container">
@@ -51,11 +57,24 @@ const UserSearch = () => {
         productsData={productsData}
         onFilteredProducts={filteredProductsHandler}
       />
+      {filterCategory && (
+        <p onClick={resetFilterHandler} className={classes.reset}>
+          Reset Filter
+        </p>
+      )}
+      {!filterCategory && (
+        <h1 className={classes['user-search']}>
+          You searched for: {searchTerm}
+        </h1>
+      )}
+      {isProductsFound && (
+        <h2 className={classes['no-products']}>No products found</h2>
+      )}
       {searchFilteredProducts && !filterCategory && (
         <Products products={searchFilteredProducts} />
       )}
 
-      {!isUserSearch && <Products products={filteredProducts} />}
+      {filterCategory && <Products products={filteredProducts} />}
     </div>
   );
 };

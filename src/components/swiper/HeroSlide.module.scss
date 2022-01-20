@@ -1,3 +1,14 @@
-.hero-swiper {
-  height: 100vh;
+@use '../../sass/abstracts/' as *;
+
+.slide-container {
+  height: 100%;
+  margin-right: 1rem;
+}
+
+.cta-wrapper {
+  margin-left: 1rem;
+
+  @include respond(md) {
+    margin: 0 auto;
+  }
 }

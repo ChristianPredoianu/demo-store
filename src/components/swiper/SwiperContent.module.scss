@@ -1,33 +1,32 @@
 @use '../../sass/abstracts/' as *;
 
 .slide-container {
-  @include flex-config($align: center);
+  @include flex-config($direction: column, $align: center);
   height: 100%;
-  margin: 0 auto;
   background-color: var(--clr-gray-light);
   margin-right: 1rem;
-}
-
-.cta-wrapper {
-  margin-left: 1rem;
 
   @include respond(md) {
-    margin: 0 auto;
+    flex-direction: row;
   }
 }
 
-.swiper-heading-primary {
-  font-size: 2rem;
-  font-weight: 400;
+.cta-wrapper {
+  margin: 0 auto;
 }
 
-.swiper-heading-secondary {
-  font-size: 4rem;
+.swiper-heading-primary {
+  font-size: clamp(2.5rem, 2vw + 0.1rem, 4rem);
   margin: 2rem 0 3rem 0;
 }
 
 .cta-btn {
-  margin-top: 2rem;
+  @include flex-config($justify: center);
+  margin: 2rem 0;
+
+  @include respond(md) {
+    justify-content: flex-start;
+  }
 }
 
 .img {

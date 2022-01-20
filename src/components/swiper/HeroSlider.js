@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 import SwiperContent from './SwiperContent';
 import womanImg from '../../assets/images/women.jpg';
 import menImg from '../../assets/images/man1.jpg';
@@ -13,38 +13,25 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 const HeroSlide = () => {
-  SwiperCore.use([Autoplay, Navigation]);
+  SwiperCore.use([Autoplay]);
 
   return (
     <Swiper
-      navigation={true}
-      onSlideChange={() => console.log('slide change')}
-      /*    autoplay={{
-        delay: 5000,
+      /*  onSlideChange={() => console.log('slide change')}
+      autoplay={{
+        delay: 1000,
         disableOnInteraction: false,
       }} */
       className={classes['hero-swiper']}
     >
       <SwiperSlide>
-        <SwiperContent
-          headingPrimary={'Women Collection 2022'}
-          headingSecondary={'New Season'}
-          img={womanImg}
-        />
+        <SwiperContent heading={'New Season'} img={womanImg} />
       </SwiperSlide>
       <SwiperSlide>
-        <SwiperContent
-          headingPrimary={'Men collection 2022'}
-          headingSecondary={'New Arrivals'}
-          img={menImg}
-        />
+        <SwiperContent heading={'New Arrivals'} img={menImg} />
       </SwiperSlide>
       <SwiperSlide>
-        <SwiperContent
-          headingPrimary={'Men New Season 2022'}
-          headingSecondary={'Jackets'}
-          img={jewleryImg}
-        />
+        <SwiperContent heading={'New Products'} img={jewleryImg} />
       </SwiperSlide>
     </Swiper>
   );

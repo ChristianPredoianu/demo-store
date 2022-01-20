@@ -1,23 +1,22 @@
+import classes from './SwiperContent.module.scss';
+import { Link } from 'react-router-dom';
+
 import CtaBtn from '../UI/CtaBtn';
 
-import classes from './SwiperContent.module.scss';
-
 const SwiperContent = (props) => {
+  console.log(props);
   return (
     <div className={classes['slide-container']}>
       <div className={classes['cta-wrapper']}>
-        <h1 className={classes['swiper-heading-primary']}>
-          {props.headingPrimary}
-        </h1>
-        <h2 className={classes['swiper-heading-secondary']}>
-          {props.headingSecondary}
-        </h2>
+        <h1 className={classes['swiper-heading-primary']}>{props.heading}</h1>
 
-        <img src={props.img} alt="category" className={classes.img} />
         <div className={classes['cta-btn']}>
-          <CtaBtn>Shop Now</CtaBtn>
+          <Link to="/Shop">
+            <CtaBtn>Shop Now</CtaBtn>
+          </Link>
         </div>
       </div>
+      <img src={props.img} alt="category" className={classes.img} />
     </div>
   );
 };

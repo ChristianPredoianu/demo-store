@@ -40,22 +40,18 @@ const Home = () => {
 
   return (
     <>
-      <div className={classes.hero}>
-        <div className="container">
-          <HeroSlider productsData={productsData} />
-        </div>
-      </div>
       <div className="container">
+        <section className={classes.hero}>
+          <HeroSlider productsData={productsData} />
+        </section>
         {isLoadingData && <LoadingSpinner />}
         {!isLoadingData && (
-          <>
-            <section className={classes.categories}>{categoryCard}</section>
-            <section className={classes.products}>
-              <h3 className={classes['products-heading']}>Products Overview</h3>
-              <Products products={productsData} />
-            </section>
-          </>
+          <section className={classes.categories}>{categoryCard}</section>
         )}
+        <section>
+          <h3 className={classes['products-heading']}>Products Overview</h3>
+          <Products products={productsData} />
+        </section>
       </div>
     </>
   );

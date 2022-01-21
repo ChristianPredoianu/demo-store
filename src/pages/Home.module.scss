@@ -9,7 +9,7 @@
   display: grid;
   justify-content: center;
   grid-row-gap: 10rem;
-  padding: var(--section-spacing) 5rem;
+  padding: var(--section-spacing) 0;
 
   @include respond(md) {
     grid-template-columns: repeat(2, 1fr);
@@ -18,7 +18,12 @@
 }
 
 .products-heading {
-  font-size: clamp(2.5rem, 2vw + 0.1rem, 3.8rem);
+  font-size: clamp(2.5rem, 2vw + 0.1rem, 3rem);
   margin-top: 5rem;
   text-transform: uppercase;
+  text-align: center;
+
+  @include respond(sm) {
+    text-align: start;
+  }
 }

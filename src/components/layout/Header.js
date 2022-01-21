@@ -8,7 +8,6 @@ import NavLinks from '../nav/NavLinks';
 import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
 import Cart from '../cart/Cart';
-import ItemsCount from '../cart/ItemsCount';
 
 import classes from './Header.module.scss';
 
@@ -73,10 +72,18 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
-          {showCart && <Cart onHideCart={hideCartHandler} />}
-          <div className={classes.counter}>
-            <ItemsCount />
-          </div>
+          <CSSTransition
+            in={showCart}
+            timeout={300}
+            classNames={{
+              enter: classes['slide-enter'],
+              enterActive: classes['slide-enter-active'],
+              exitActive: classes['slide-exit-active'],
+            }}
+            unmountOnExit
+          >
+            <Cart onHideCart={hideCartHandler} />
+          </CSSTransition>
         </nav>
       </div>
     </header>

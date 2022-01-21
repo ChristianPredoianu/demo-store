@@ -19,11 +19,8 @@ const CategoryCard = (props) => {
       <div className={classes['card-wrapper']} onClick={goToShopHandler}>
         <h5 className={classes['card-wrapper__heading']}>{cardHeading}</h5>
         <h6 className={classes['card-wrapper__subheading']}>Spring 2022</h6>
-        <img
-          src={props.category.categoryImg}
-          alt="category"
-          className={classes['card-wrapper__img']}
-        />
+
+        <img src={props.category.categoryImg} alt="category" />
       </div>
     </Card>
   );

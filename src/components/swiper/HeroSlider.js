@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import SwiperContent from './SwiperContent';
@@ -13,25 +14,48 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 const HeroSlide = () => {
+  const [isAnimation, setIsAnimation] = useState(false);
   SwiperCore.use([Autoplay]);
+
+  useEffect(() => {
+    setIsAnimation(true);
+  }, []);
 
   return (
     <Swiper
-      /*  onSlideChange={() => console.log('slide change')}
+      onSlideChange={() => {
+        setIsAnimation(false);
+        setIsAnimation(true);
+      }}
+      onReachEndEnd={() => {
+        setIsAnimation(false);
+      }}
       autoplay={{
-        delay: 1000,
-        disableOnInteraction: false,
-      }} */
+        delay: 5000,
+        disableOnInteraction: true,
+      }}
       className={classes['hero-swiper']}
     >
       <SwiperSlide>
-        <SwiperContent heading={'New Season'} img={womanImg} />
+        <SwiperContent
+          heading={'New Season'}
+          img={womanImg}
+          isAnimation={isAnimation}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <SwiperContent heading={'New Arrivals'} img={menImg} />
+        <SwiperContent
+          heading={'New Arrivals'}
+          img={menImg}
+          isAnimation={isAnimation}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <SwiperContent heading={'New Products'} img={jewleryImg} />
+        <SwiperContent
+          heading={'New Products'}
+          img={jewleryImg}
+          isAnimation={isAnimation}
+        />
       </SwiperSlide>
     </Swiper>
   );

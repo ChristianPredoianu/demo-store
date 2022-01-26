@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
+
 import classes from './About.module.scss';
+
+import useGsapScrollReveal from '../hooks/useGsapScrollReveal';
 
 import clothesImg from '../assets/images/clothes.jpg';
 import clothesImg2 from '../assets/images/clothes2.jpg';
 
 const About = () => {
+  const { addToRefs, scrollRevealAnimation } = useGsapScrollReveal();
+  useEffect(() => {
+    scrollRevealAnimation();
+  }, [scrollRevealAnimation]);
   return (
     <>
       <section>
@@ -12,7 +20,7 @@ const About = () => {
         </div>
       </section>
       <div className="container">
-        <section className={classes['story-section']}>
+        <section className={classes['story-section']} ref={addToRefs}>
           <div className={classes['story']}>
             <h2 className={classes['story__heading']}>Our Story</h2>
             <p className={classes['story__paragraph']}>
@@ -51,7 +59,7 @@ const About = () => {
             />
           </div>
         </section>
-        <section className={classes['mission-section']}>
+        <section className={classes['mission-section']} ref={addToRefs}>
           <div className={classes['story']}>
             <h2 className={classes['story__heading']}>Our mission</h2>
             <p className={classes['story__paragraph']}>

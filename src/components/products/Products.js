@@ -5,6 +5,8 @@ import classes from './Products.module.scss';
 const Products = (props) => {
   let output;
 
+  console.log(props.products);
+
   if (props.products !== null) {
     output = props.products.map((product) => (
       <ProductItem
@@ -24,11 +26,7 @@ const Products = (props) => {
     );
   }
 
-  return (
-    <>
-      <section className={classes['section-products']}>{output}</section>
-    </>
-  );
+  return <section className={classes['section-products']}>{output}</section>;
 };
 
 export default Products;

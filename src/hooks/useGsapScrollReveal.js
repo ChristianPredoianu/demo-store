@@ -2,21 +2,22 @@ import { useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const useGsapScrollReveal = () => {
+const useGsapScrollReveal = (test) => {
   gsap.registerPlugin(ScrollTrigger);
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
-  const addToRefs = useCallback((el) => {
+  const addToRefs = (el) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
-  }, []);
+  };
 
-  const scrollRevealAnimation = () => {
+  const scrollRevealAnimation = useCallback(() => {
+    console.log(revealRefs.current);
     revealRefs.current.forEach((el) => {
-      gsap.fromTo(
+      const animation = gsap.fromTo(
         el,
         {
           autoAlpha: 0,
@@ -29,14 +30,16 @@ const useGsapScrollReveal = () => {
           ease: 'none',
           scrollTrigger: {
             trigger: el,
-            markers: true,
-            start: 'top center+=100',
+            start: 'top center',
             toggleActions: 'play none none none',
           },
         }
       );
+      return () => {
+        animation.kill();
+      };
     });
-  };
+  }, []);
 
   return { addToRefs, scrollRevealAnimation };
 };

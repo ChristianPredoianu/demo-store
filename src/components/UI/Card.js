@@ -1,4 +1,5 @@
 import VanillaTilt from 'vanilla-tilt';
+import React from 'react';
 
 import classes from './Card.module.scss';
 

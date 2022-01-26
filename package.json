@@ -16,7 +16,6 @@
     "react-scripts": "4.0.3",
     "react-transition-group": "^4.4.2",
     "swiper": "^6.8.4",
-    "vanilla-tilt": "^1.7.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

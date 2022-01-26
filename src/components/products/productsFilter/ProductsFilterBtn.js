@@ -5,10 +5,15 @@ const ProductsFilterBtn = (props) => {
     props.category.category.charAt(0).toUpperCase() +
     props.category.category.slice(1);
 
+  const onClickedCategoryHandler = () => {
+    props.onClickedCategory(props.category.category);
+    props.closeFilter();
+  };
+
   return (
     <button
       className={classes['filter-btn']}
-      onClick={() => props.onClickedCategory(props.category.category)}
+      onClick={onClickedCategoryHandler}
     >
       {category}
     </button>

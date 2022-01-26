@@ -13,7 +13,8 @@ const ProductsFilter = (props) => {
 
   const filterIcon = <FontAwesomeIcon icon={faFilter} />;
 
-  const toggleFilterHandler = () => setIsFilterOpen(!isFilterOpen);
+  const toggleFilterHandler = () => setIsFilterOpen(!isFilterOpen),
+    closeFilterHandler = () => setIsFilterOpen(false);
 
   useEffect(() => {
     if (screenWidth < 640) {
@@ -34,6 +35,7 @@ const ProductsFilter = (props) => {
         <ProductsFilterList
           onClickedCategory={props.onFilteredProducts}
           productsData={props.productsData}
+          closeFilter={closeFilterHandler}
         />
       )}
     </section>

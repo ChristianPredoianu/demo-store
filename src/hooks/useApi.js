@@ -19,7 +19,10 @@ const useApi = (url) => {
   }, [url]);
 
   useEffect(() => {
+    let controller = new AbortController();
     fetchData();
+
+    return () => controller?.abort();
   }, [fetchData]);
 
   return { productsData, isLoadingData, error };

@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 
 import HeroSlider from '../components/swiper/HeroSlider';
 import CategoryCard from '../components/UI/CategoryCard';
@@ -10,16 +10,16 @@ import menImg from '../assets/images/mens-clothing.jpg';
 import jewleryImg from '../assets/images/jewlery.jpg';
 
 import useApi from '../hooks/useApi';
-import useGsapScrollReveal from '../hooks/useGsapScrollReveal';
 
 import classes from './Home.module.scss';
+
+import VanillaTilt from 'vanilla-tilt';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
   const { productsData, isLoadingData, error } = useApi(
     'https://fakestoreapi.com/products'
   );
-  const { addToRefs, scrollRevealAnimation } = useGsapScrollReveal();
 
   const imgArray = useMemo(
     () => [menImg, jewleryImg, electronicsImg, womensImg],
@@ -28,9 +28,9 @@ const Home = () => {
 
   let categoryCard;
 
-  if (categories) {
+  if (!isLoadingData) {
     categoryCard = categories.map((category, index) => (
-      <div key={index} ref={addToRefs}>
+      <div key={index}>
         <CategoryCard category={category} />
       </div>
     ));
@@ -57,10 +57,6 @@ const Home = () => {
     }
   }, [isLoadingData, productsData, imgArray]);
 
-  useEffect(() => {
-    if (categories) scrollRevealAnimation();
-  }, [categories, scrollRevealAnimation]);
-
   return (
     <>
       <div className="container">
@@ -68,13 +64,13 @@ const Home = () => {
           <HeroSlider productsData={productsData} />
         </section>
         {isLoadingData && <LoadingSpinner />}
-        {!isLoadingData && (
-          <section className={classes.categories}>{categoryCard} </section>
+        {!isLoadingData && categories && (
+          <>
+            <section className={classes.categories}>{categoryCard}</section>
+            <h3 className={classes['products-heading']}>Products Overview</h3>
+            <Products products={productsData} />
+          </>
         )}
-        <section>
-          <h3 className={classes['products-heading']}>Products Overview</h3>
-          <Products products={productsData} />
-        </section>
       </div>
     </>
   );

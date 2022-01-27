@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import CartCounter from '../UI/CartCounter';
-
 import classes from './CartItem.module.scss';
 
 const CartItem = (props) => {

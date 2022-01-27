@@ -1,13 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemsCount from '../cart/ItemsCount';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
   faShoppingCart,
   faBars,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-
 import classes from './NavIcons.module.scss';
 
 const NavIcons = (props) => {

@@ -1,7 +1,6 @@
-import FooterList from './FooterList';
-
 import footerData from '../../../footerData.json';
 
+import FooterList from './FooterList';
 import classes from './Footer.module.scss';
 
 const Footer = () => {

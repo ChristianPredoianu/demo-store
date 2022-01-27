@@ -6,8 +6,8 @@
     $justify: space-between,
     $align: flex-start
   );
-  font-size: 1.5rem;
   background-color: var(--clr-gray-medium);
+  font-size: 1.5rem;
   padding: 5rem 1rem;
 
   @include respond(sm) {

@@ -1,12 +1,10 @@
 import { useContext } from 'react';
-import CartContext from '../../store/cart-context';
 
+import CartContext from '../../store/cart-context';
 import CartItem from './CartItem';
 import CtaBtn from '../UI/CtaBtn';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
 import classes from './Cart.module.scss';
 
 const Cart = (props) => {

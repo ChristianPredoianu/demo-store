@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react';
+
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-
 import CtaBtn from '../UI/CtaBtn';
-
 import classes from './SwiperContent.module.scss';
 
 const SwiperContent = (props) => {
@@ -34,24 +33,25 @@ const SwiperContent = (props) => {
     }
   }, [props.isAnimation]);
 
+  const animatedSwiperContent = (
+    <>
+      <h1 className={classes['swiper-heading-primary']} ref={headingRef}>
+        {props.heading}
+      </h1>
+      <div className={classes['cta-btn']}>
+        <Link to="/Shop">
+          <div ref={btnRef}>
+            <CtaBtn>Shop Now</CtaBtn>
+          </div>
+        </Link>
+      </div>
+    </>
+  );
+
   return (
     <div className={classes['slide-container']}>
       <div className={classes['cta-wrapper']}>
-        {props.isAnimation && (
-          <h1 className={classes['swiper-heading-primary']} ref={headingRef}>
-            {props.heading}
-          </h1>
-        )}
-
-        {props.isAnimation && (
-          <div className={classes['cta-btn']}>
-            <Link to="/Shop">
-              <div ref={btnRef}>
-                <CtaBtn>Shop Now</CtaBtn>
-              </div>
-            </Link>
-          </div>
-        )}
+        {props.isAnimation && animatedSwiperContent}
       </div>
       <img src={props.img} alt="category" className={classes.img} />
     </div>

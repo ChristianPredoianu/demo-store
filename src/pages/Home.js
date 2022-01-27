@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
+import useApi from '../hooks/useApi';
 
 import HeroSlider from '../components/swiper/HeroSlider';
 import CategoryCard from '../components/UI/CategoryCard';
@@ -9,11 +10,7 @@ import womensImg from '../assets/images/womens-clothing.jpg';
 import menImg from '../assets/images/mens-clothing.jpg';
 import jewleryImg from '../assets/images/jewlery.jpg';
 
-import useApi from '../hooks/useApi';
-
 import classes from './Home.module.scss';
-
-import VanillaTilt from 'vanilla-tilt';
 
 const Home = () => {
   const [categories, setCategories] = useState([]);

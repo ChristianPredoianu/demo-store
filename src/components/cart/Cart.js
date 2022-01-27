@@ -42,20 +42,23 @@ const Cart = (props) => {
     />
   ));
 
+  const itemsInCart = hasCartItems ? (
+    <>
+      <p className={classes['cart__total-amount']}>
+        Total Amount: {`$ ${totalAmount.toFixed(2)}`}
+      </p>
+      <CtaBtn>Checkout</CtaBtn>
+    </>
+  ) : (
+    <p className={classes.empty}>Your cart is empty !</p>
+  );
+
   return (
     <div className={classes.cart} onMouseLeave={props.onHideCart}>
       {closeIcon}
       <h3 className={classes['cart__heading']}>Cart</h3>
       {cartItems}
-      {hasCartItems && (
-        <>
-          <p className={classes['cart__total-amount']}>
-            Total Amount: {`$ ${totalAmount.toFixed(2)}`}
-          </p>
-          <CtaBtn>Checkout</CtaBtn>
-        </>
-      )}
-      {!hasCartItems && <p className={classes.empty}>Your cart is empty !</p>}
+      {itemsInCart}
     </div>
   );
 };

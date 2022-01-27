@@ -57,7 +57,6 @@ const Cart = (props) => {
           <CtaBtn>Checkout</CtaBtn>
         </>
       )}
-
       {!hasCartItems && <p className={classes.empty}>Your cart is empty !</p>}
     </div>
   );

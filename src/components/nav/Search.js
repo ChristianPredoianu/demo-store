@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { useNavigate, createSearchParams } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-
 import classes from './Search.module.scss';
 
 const Search = (props) => {

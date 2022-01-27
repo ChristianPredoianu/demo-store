@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
+
 import { CSSTransition } from 'react-transition-group';
 import useScreenWidth from '../../hooks/useScreenWidth';
-
 import TopHeader from '../nav/TopHeader';
 import logo from '../../assets/images/fakestore2.png';
 import NavLinks from '../nav/NavLinks';
 import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
 import Cart from '../cart/Cart';
-
 import classes from './Header.module.scss';
 
 const Header = () => {
@@ -30,15 +29,13 @@ const Header = () => {
     }
   }, [screenWidth]);
 
-  console.log(showCart);
-  console.log('rendering header');
-
   return (
     <header>
       <TopHeader />
       <div className="container">
         <nav className={classes.nav}>
           <img src={logo} alt="Store logo" className={classes.nav__logo} />
+
           <CSSTransition
             in={toggleMenu || screenWidth > 640}
             timeout={300}
@@ -72,6 +69,7 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
+
           <CSSTransition
             in={showCart}
             timeout={300}

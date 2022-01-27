@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import CartCounter from '../UI/CartCounter';
 
 import classes from './CartItem.module.scss';
@@ -26,7 +27,11 @@ const CartItem = (props) => {
 
   return (
     <div className={classes['cart-item']}>
-      <img src={props.productImg} alt="" className={classes['product-img']} />
+      <img
+        src={props.productImg}
+        alt="product"
+        className={classes['product-img']}
+      />
       <div className={classes['product-details']}>
         <p className={classes['product-details__title']}>
           {props.productTitle}

@@ -1,5 +1,4 @@
 import ProductsFilterBtn from './ProductsFilterBtn';
-
 import classes from './ProductsFilterList.module.scss';
 
 const ProductsFilterList = (props) => {

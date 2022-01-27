@@ -1,8 +1,6 @@
 @use '../../sass/abstracts/' as *;
 
 .search {
-  width: 100vw;
-  min-height: 100vh;
   @include position($pos: fixed, $top: 0, $left: 0);
   @include flex-config(
     $display: flex,
@@ -10,6 +8,8 @@
     $justify: center,
     $align: center
   );
+  width: 100vw;
+  min-height: 100vh;
   background-color: rgb(255, 255, 255, 0.7);
   z-index: 100;
 

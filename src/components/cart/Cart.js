@@ -1,18 +1,16 @@
 import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
+
 import CartItem from './CartItem';
 import CtaBtn from '../UI/CtaBtn';
 
-import CartContext from '../../store/cart-context';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './Cart.module.scss';
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-
   const { items, totalAmount } = cartCtx;
 
   const hasCartItems = items.length > 0;
@@ -52,11 +50,14 @@ const Cart = (props) => {
       <h3 className={classes['cart__heading']}>Cart</h3>
       {cartItems}
       {hasCartItems && (
-        <p className={classes['cart__total-amount']}>
-          Total Amount: {`$ ${totalAmount.toFixed(2)}`}
-        </p>
+        <>
+          <p className={classes['cart__total-amount']}>
+            Total Amount: {`$ ${totalAmount.toFixed(2)}`}
+          </p>
+          <CtaBtn>Checkout</CtaBtn>
+        </>
       )}
-      {hasCartItems && <CtaBtn>Checkout</CtaBtn>}
+
       {!hasCartItems && <p className={classes.empty}>Your cart is empty !</p>}
     </div>
   );

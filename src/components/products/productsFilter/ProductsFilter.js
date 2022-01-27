@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import useScreenWidth from '../../../hooks/useScreenWidth';
 import ProductsFilterList from './ProductsFilterList';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import classes from './ProductsFilter.module.scss';
 
 const ProductsFilter = (props) => {

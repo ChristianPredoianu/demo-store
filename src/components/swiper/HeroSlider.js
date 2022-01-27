@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
-import SwiperContent from './SwiperContent';
-import womanImg from '../../assets/images/women.jpg';
-import menImg from '../../assets/images/man1.jpg';
-import jewleryImg from '../../assets/images/jewlery-slider.jpg';
-
-import classes from './HeroSlide.module.scss';
-
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
+import SwiperContent from './SwiperContent';
+import womanImg from '../../assets/images/women.jpg';
+import menImg from '../../assets/images/man1.jpg';
+import jewleryImg from '../../assets/images/jewlery-slider.jpg';
+import classes from './HeroSlide.module.scss';
 
 const HeroSlide = () => {
   const [isAnimation, setIsAnimation] = useState(false);

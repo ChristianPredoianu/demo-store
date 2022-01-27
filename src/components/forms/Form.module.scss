@@ -2,6 +2,5 @@
 
 .form {
   width: 100%;
-
   @include flex-config($direction: column, $align: center);
 }

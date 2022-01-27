@@ -1,7 +1,7 @@
 import { useState } from 'react';
+
 import ProductModal from '../UI/Product-modal/ProductModal';
 import Card from '../UI/Card';
-
 import classes from './ProductItem.module.scss';
 
 const ProductItem = (props) => {

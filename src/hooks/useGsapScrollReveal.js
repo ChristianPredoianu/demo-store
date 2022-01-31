@@ -2,7 +2,7 @@ import { useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const useGsapScrollReveal = (test) => {
+const useGsapScrollReveal = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const revealRefs = useRef([]);
@@ -15,7 +15,6 @@ const useGsapScrollReveal = (test) => {
   };
 
   const scrollRevealAnimation = useCallback(() => {
-    console.log(revealRefs.current);
     revealRefs.current.forEach((el) => {
       const animation = gsap.fromTo(
         el,

@@ -20,7 +20,7 @@ const ProductItem = (props) => {
             className={classes['product-img']}
           />
           <div className={classes['product-info']}>
-            <h4>{props.title}</h4>
+            <h4 className={classes['product-info__title']}>{props.title}</h4>
             <h5>{props.price} $</h5>
           </div>
         </div>

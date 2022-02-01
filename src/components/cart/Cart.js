@@ -50,16 +50,18 @@ const Cart = (props) => {
       <CtaBtn>Checkout</CtaBtn>
     </>
   ) : (
-    <p className={classes.empty}>Your cart is empty !</p>
+    <p className={classes.empty}>Your cart is empty!</p>
   );
 
   return (
-    <div className={classes.cart} onMouseLeave={props.onHideCart}>
-      {closeIcon}
-      <h3 className={classes['cart__heading']}>Cart</h3>
-      {cartItems}
-      {itemsInCart}
-    </div>
+    <>
+      <div className={classes.cart}>
+        {closeIcon}
+        <h3 className={classes['cart__heading']}>Cart</h3>
+        {cartItems}
+        {itemsInCart}
+      </div>
+    </>
   );
 };
 

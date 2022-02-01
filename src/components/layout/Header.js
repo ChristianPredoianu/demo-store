@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import Backdrop from '../UI/Product-modal/Backdrop';
 import { CSSTransition } from 'react-transition-group';
 import useScreenWidth from '../../hooks/useScreenWidth';
 import TopHeader from '../nav/TopHeader';
@@ -8,6 +7,7 @@ import logo from '../../assets/images/fakestore2.png';
 import NavLinks from '../nav/NavLinks';
 import NavIcons from '../nav/NavIcons';
 import Search from '../nav/Search';
+import Backdrop from '../UI/Product-modal/Backdrop';
 import Cart from '../cart/Cart';
 import classes from './Header.module.scss';
 

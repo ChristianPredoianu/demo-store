@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classes from './NavLinks.module.scss';
 
 const NavLinks = (props) => {
@@ -8,25 +8,53 @@ const NavLinks = (props) => {
         className={classes['nav-links__link']}
         onClick={props.onCloseMobileMenu}
       >
-        <Link to="/"> Home</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? classes.active : classes.inactive
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li
         className={classes['nav-links__link']}
         onClick={props.onCloseMobileMenu}
       >
-        <Link to="/Shop"> Shop</Link>
+        <NavLink
+          to="/Shop"
+          className={({ isActive }) =>
+            isActive ? classes.active : classes.inactive
+          }
+        >
+          Shop
+        </NavLink>
       </li>
       <li
         className={classes['nav-links__link']}
         onClick={props.onCloseMobileMenu}
       >
-        <Link to="/About"> About</Link>
+        <NavLink
+          to="/About"
+          className={({ isActive }) =>
+            isActive ? classes.active : classes.inactive
+          }
+        >
+          About
+        </NavLink>
       </li>
       <li
         className={classes['nav-links__link']}
         onClick={props.onCloseMobileMenu}
       >
-        <Link to="/Contact"> Contact</Link>
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            isActive ? classes.active : classes.inactive
+          }
+        >
+          Contact
+        </NavLink>
       </li>
     </ul>
   );

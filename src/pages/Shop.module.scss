@@ -1,4 +1,6 @@
-@use '../sass/abstracts/' as *;
+.filtered-products {
+  font-size: clamp(2.5rem, 2vw + 0.1rem, 3rem);
+}
 
 .products {
   min-height: 90vh;

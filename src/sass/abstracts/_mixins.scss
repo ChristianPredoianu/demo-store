@@ -80,7 +80,7 @@
 
 @mixin respond($breakpoint) {
   @if $breakpoint == sm {
-    @media (min-width: 40em) {
+    @media (min-width: 40.5em) {
       //640px
       @content;
     }

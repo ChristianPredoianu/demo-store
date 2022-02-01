@@ -25,6 +25,7 @@ const Shop = () => {
 
   const filteredProductsHandler = (selectedCategory) => {
     setFilteredProducts(selectedCategory);
+    console.log(selectedCategory);
     setInitialCategory(null);
   };
 
@@ -37,6 +38,13 @@ const Shop = () => {
           (product) => product.category === filteredProducts
         ));
   }
+
+  const productsHeading = (
+    <p className={classes['filtered-products']}>
+      {filteredProducts.charAt(0).toUpperCase() + filteredProducts.slice(1)}
+      {filteredProducts === 'all' ? ' Products' : ''}
+    </p>
+  );
 
   if (isLoadingData) {
     output = <LoadingSpinner />;
@@ -53,6 +61,7 @@ const Shop = () => {
           onFilteredProducts={filteredProductsHandler}
           productsData={productsData}
         />
+        {productsHeading}
         {output}
       </section>
     </div>

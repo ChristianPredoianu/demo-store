@@ -7,9 +7,13 @@ const SignUpFormSuccess = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
+    const navigateTimeout = setTimeout(() => {
       navigate('/');
     }, 2000);
+
+    return () => {
+      clearTimeout(navigateTimeout);
+    };
   });
 
   return (

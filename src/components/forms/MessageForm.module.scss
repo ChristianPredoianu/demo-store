@@ -31,7 +31,7 @@
   padding: 1rem;
 }
 
-.submit {
+.submit-btn {
   display: block;
   width: 100%;
   background-color: var(--clr-black);
@@ -41,6 +41,7 @@
   border: none;
   border-radius: 1rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .error {

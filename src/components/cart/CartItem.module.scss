@@ -11,15 +11,20 @@
 
 .product-details {
   @include flex-config($direction: column);
-  padding: 0 2rem;
+  padding: 0 2rem 0 5rem;
 
   &__title {
-    font-weight: 700;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  &__price {
+    font-size: 1.3rem;
   }
 
   &__amount {
     padding: 1rem 0;
+    font-weight: 700;
   }
 
   &__counter {
@@ -30,5 +35,6 @@
     color: #ff0000;
     padding: 1rem 0;
     cursor: pointer;
+    font-size: 1.3rem;
   }
 }

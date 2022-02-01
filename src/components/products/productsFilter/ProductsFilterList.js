@@ -22,6 +22,7 @@ const ProductsFilterList = (props) => {
       category={category}
       onClickedCategory={props.onClickedCategory}
       closeFilter={props.closeFilter}
+      index={index}
     />
   ));
 

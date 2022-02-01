@@ -41,7 +41,7 @@ const MessageForm = (props) => {
           {errors.help && <p className={classes.error}>{errors.help}</p>}
         </div>
         <div>
-          <button className={classes.submit} onClick={formSubmitHandler}>
+          <button className={classes['submit-btn']} onClick={formSubmitHandler}>
             Submit
           </button>
         </div>

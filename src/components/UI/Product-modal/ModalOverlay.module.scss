@@ -1,16 +1,24 @@
 @use '../../../sass/abstracts/' as *;
 
 .modal {
-  @include flex-config($direction: column, $align: center);
+  @include flex-config(
+    $direction: column,
+    $align: center,
+    $justify: space-around
+  );
   @include position($pos: fixed, $top: 50%, $left: 50%);
   height: 90vh;
-  width: 80%;
+  width: 90vw;
   background-color: var(--clr-white);
   color: var(--clr-black);
   transform: translate(-50%, -50%);
   padding: 3rem 4rem;
-  overflow: auto;
+  overflow-y: scroll;
   z-index: 1001;
+
+  @include respond(lg) {
+    width: 50%;
+  }
 }
 
 .close-modal-icon {
@@ -24,7 +32,7 @@
   margin-top: 5rem;
 
   &__img {
-    width: 30rem;
+    width: 20rem;
   }
 
   &__title {
@@ -40,6 +48,16 @@
   }
 }
 
-.counter {
+.cta {
+  @include flex-config($direction: column, $align: center);
   padding: 2rem;
+}
+
+.counter {
+  padding: 2rem 0;
+}
+
+.product-added {
+  font-size: clamp(1.5rem, 2vw + 0.1rem, 1.8rem);
+  color: #007200;
 }

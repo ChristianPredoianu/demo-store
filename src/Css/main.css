@@ -73,7 +73,7 @@ body {
   --clr-gray-dark: #222;
   --section-spacing: 7rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 40.5em) {
   :root {
     --section-spacing: 10rem;
   }
@@ -89,7 +89,7 @@ body {
   margin: 0 auto;
   padding: 0 0.5rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 40.5em) {
   .container {
     max-width: 64rem;
   }

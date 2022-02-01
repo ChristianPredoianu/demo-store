@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import CartCounter from '../CartCounter';
 import CtaBtn from '../CtaBtn';
 import CartContext from '../../../store/cart-context';
@@ -9,9 +9,9 @@ import classes from './ModalOverlay.module.scss';
 
 const ModalOverlay = (props) => {
   const [cartCounter, setCartCounter] = useState(1);
+  const [isProductAddedToCart, setIsProductAddedToCart] = useState(false);
   const cartCtx = useContext(CartContext);
 
-  console.log(cartCtx);
   const closeIcon = (
     <FontAwesomeIcon
       icon={faTimesCircle}
@@ -28,6 +28,16 @@ const ModalOverlay = (props) => {
     amount: cartCounter,
     totalAmount: cartCtx.totalAmount,
   };
+
+  useEffect(() => {
+    const addedToCartTimeout = setTimeout(() => {
+      setIsProductAddedToCart(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(addedToCartTimeout);
+    };
+  });
 
   const decreaseCartCountHandler = () => {
     if (cartCounter >= 2) {
@@ -46,6 +56,7 @@ const ModalOverlay = (props) => {
 
   const addToCartHandler = () => {
     cartCtx.addToCart(productItem);
+    setIsProductAddedToCart(true);
   };
 
   return (
@@ -57,24 +68,28 @@ const ModalOverlay = (props) => {
           alt="product"
           className={classes['product__img']}
         />
-        <div className={classes['product__product-info']}>
-          <h3 className={classes['product__title']}>{props.productTitle}</h3>
-          <p className={classes['product__price']}>
-            {'$ ' + props.productPrice}
-          </p>
-        </div>
-      </div>
-      <div className={classes.counter}>
-        <CartCounter
-          onDecreaseCartCount={decreaseCartCountHandler}
-          onIncreaseCartCount={increaseCartCountHandler}
-          onChangeCount={changeCountHandler}
-          cartCount={cartCounter}
-        />
-      </div>
 
-      <div className={classes['add-to-cart']}></div>
-      <CtaBtn handleClick={addToCartHandler}>Add to cart</CtaBtn>
+        <h3 className={classes['product__title']}>{props.productTitle}</h3>
+        <p className={classes['product__price']}>{'$ ' + props.productPrice}</p>
+      </div>
+      {!isProductAddedToCart && (
+        <div className={classes.cta}>
+          <div className={classes.counter}>
+            <CartCounter
+              onDecreaseCartCount={decreaseCartCountHandler}
+              onIncreaseCartCount={increaseCartCountHandler}
+              onChangeCount={changeCountHandler}
+              cartCount={cartCounter}
+            />
+          </div>
+
+          <CtaBtn handleClick={addToCartHandler}>Add to cart</CtaBtn>
+        </div>
+      )}
+
+      {isProductAddedToCart && (
+        <p className={classes['product-added']}>Product added to cart</p>
+      )}
     </div>
   );
 };

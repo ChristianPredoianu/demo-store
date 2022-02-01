@@ -19,11 +19,7 @@ const NavIcons = (props) => {
       <li className={classes['nav-icons__search']} onClick={props.onOpenSearch}>
         {searchIcon}
       </li>
-      <li
-        className={classes['nav-icons__cart']}
-        onMouseEnter={props.onShowCart}
-        onClick={props.onShowCart}
-      >
+      <li className={classes['nav-icons__cart']} onClick={props.onShowCart}>
         {cartIcon}
       </li>
       <ItemsCount />

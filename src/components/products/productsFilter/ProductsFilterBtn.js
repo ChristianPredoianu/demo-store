@@ -1,11 +1,12 @@
 import classes from './ProductsFilterBtn.module.scss';
 
 const ProductsFilterBtn = (props) => {
+  console.log(props.category.category);
   const category =
     props.category.category.charAt(0).toUpperCase() +
     props.category.category.slice(1);
 
-  const onClickedCategoryHandler = () => {
+  const onClickedCategoryHandler = (e) => {
     props.onClickedCategory(props.category.category);
     props.closeFilter();
   };

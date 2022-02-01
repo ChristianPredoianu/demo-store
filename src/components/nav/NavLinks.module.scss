@@ -14,8 +14,8 @@
 
   @include respond(sm) {
     position: static;
-    flex-direction: row;
     height: auto;
+    flex-direction: row;
     background-color: transparent;
   }
 
@@ -24,6 +24,15 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    color: var(--clr-gray-light);
   }
+}
+
+a {
+  color: var(--clr-gray-dark);
+}
+
+.active {
+  border-bottom: 0.2rem solid var(--clr-blue);
+  padding-bottom: 0.3rem;
+  color: var(--clr-blue);
 }

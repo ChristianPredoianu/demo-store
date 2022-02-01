@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import Backdrop from '../UI/Product-modal/Backdrop';
 import { CSSTransition } from 'react-transition-group';
 import useScreenWidth from '../../hooks/useScreenWidth';
 import TopHeader from '../nav/TopHeader';
@@ -69,19 +70,23 @@ const Header = () => {
           >
             <Search onClose={closeSearchHandler} />
           </CSSTransition>
-
-          <CSSTransition
-            in={showCart}
-            timeout={300}
-            classNames={{
-              enter: classes['slide-enter'],
-              enterActive: classes['slide-enter-active'],
-              exitActive: classes['slide-exit-active'],
-            }}
-            unmountOnExit
-          >
-            <Cart onHideCart={hideCartHandler} />
-          </CSSTransition>
+          <>
+            {showCart && <Backdrop onClose={hideCartHandler} />}
+            <CSSTransition
+              in={showCart}
+              timeout={300}
+              classNames={{
+                enter: classes['slide-enter-right'],
+                enterActive: classes['slide-enter-right-active'],
+                exitActive: classes['slide-exit-right-active'],
+              }}
+              unmountOnExit
+            >
+              <>
+                <Cart onHideCart={hideCartHandler} />
+              </>
+            </CSSTransition>
+          </>
         </nav>
       </div>
     </header>

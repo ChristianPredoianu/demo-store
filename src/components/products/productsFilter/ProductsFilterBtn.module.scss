@@ -2,8 +2,13 @@
 
 .filter-btn {
   background-color: transparent;
-  cursor: pointer;
+  color: var(--clr-gray-dark);
   border: none;
+  cursor: pointer;
+
+  &:active {
+    color: var(--clr-blue);
+  }
 
   &:not(:first-of-type) {
     margin-top: 2rem;

@@ -1,6 +1,6 @@
-import { useEffect, useState, useMemo, useRef } from 'react';
-import useApi from '../hooks/useApi';
+import { useEffect, useState, useMemo } from 'react';
 
+import useApi from '../hooks/useApi';
 import HeroSlider from '../components/swiper/HeroSlider';
 import CategoryCard from '../components/UI/CategoryCard';
 import Products from '../components/products/Products';
@@ -9,7 +9,6 @@ import electronicsImg from '../assets/images/electronics.jpg';
 import womensImg from '../assets/images/womens-clothing.jpg';
 import menImg from '../assets/images/mens-clothing.jpg';
 import jewleryImg from '../assets/images/jewlery.jpg';
-
 import classes from './Home.module.scss';
 
 const Home = () => {

@@ -13,7 +13,6 @@ import {
   faLinkedin,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-
 import classes from './Contact.module.scss';
 
 const Contact = () => {

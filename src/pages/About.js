@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 
-import classes from './About.module.scss';
-
 import useGsapScrollReveal from '../hooks/useGsapScrollReveal';
-
 import clothesImg from '../assets/images/clothes.jpg';
 import clothesImg2 from '../assets/images/clothes2.jpg';
+import classes from './About.module.scss';
 
 const About = () => {
   const { addToRefs, scrollRevealAnimation } = useGsapScrollReveal();

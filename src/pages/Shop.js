@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import useApi from '../hooks/useApi';
 import ProductsFilter from '../components/products/productsFilter/ProductsFilter';
 import Products from '../components/products/Products';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
-
 import classes from './Shop.module.scss';
 
 const Shop = () => {

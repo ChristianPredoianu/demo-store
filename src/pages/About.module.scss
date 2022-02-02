@@ -66,8 +66,8 @@
 }
 
 .story-img-wrapper {
-  width: 70%;
   position: relative;
+  width: 70%;
   margin: 0 auto;
 
   @include respond(md) {
@@ -90,6 +90,7 @@
 
 .mission-section {
   margin: var(--section-spacing) 0;
+
   @include respond(md) {
     @include flex-config($justify: space-between, $align: center);
     flex-direction: row-reverse;

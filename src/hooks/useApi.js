@@ -4,25 +4,29 @@ const useApi = (url) => {
   const [productsData, setProductsData] = useState(null);
   const [isLoadingData, setIsLoadingData] = useState(true);
   const [error, setError] = useState(null);
+  const [isMounted, setIsMounted] = useState(true);
 
   const fetchData = useCallback(async () => {
-    try {
-      const productsData = await fetch(url);
-      const data = await productsData.json();
-      setProductsData(data);
-      setIsLoadingData(false);
-    } catch (error) {
-      if (error) {
-        setError(error);
+    if (isMounted) {
+      try {
+        const productsData = await fetch(url);
+        const data = await productsData.json();
+        setProductsData(data);
+        setIsLoadingData(false);
+      } catch (error) {
+        if (error) {
+          setError(error);
+        }
       }
     }
-  }, [url]);
+  }, [url, isMounted]);
 
   useEffect(() => {
-    let controller = new AbortController();
     fetchData();
 
-    return () => controller?.abort();
+    return () => {
+      setIsMounted(false);
+    };
   }, [fetchData]);
 
   return { productsData, isLoadingData, error };

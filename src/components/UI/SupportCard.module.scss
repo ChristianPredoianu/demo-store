@@ -2,8 +2,8 @@
 
 .support-card {
   @include flex-config($direction: column, $align: center);
-  margin: 0 auto;
   width: 90%;
+  margin: 0 auto;
   box-shadow: var(--box-shadow);
 
   &:not(:first-child) {

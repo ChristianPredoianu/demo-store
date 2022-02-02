@@ -18,7 +18,7 @@
 }
 
 .products-heading {
-  font-size: clamp(2.5rem, 2vw + 0.1rem, 3rem);
+  font-size: var(--clamped-heading);
   margin-top: 5rem;
   text-transform: uppercase;
   text-align: center;

@@ -1,5 +1,5 @@
 .filtered-products {
-  font-size: clamp(2.5rem, 2vw + 0.1rem, 3rem);
+  font-size: var(--clamped-heading);
 }
 
 .products {

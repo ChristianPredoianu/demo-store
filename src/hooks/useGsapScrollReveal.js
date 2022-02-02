@@ -29,7 +29,6 @@ const useGsapScrollReveal = () => {
           ease: 'none',
           scrollTrigger: {
             trigger: el,
-            start: 'top center',
             toggleActions: 'play none none none',
           },
         }

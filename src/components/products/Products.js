@@ -5,8 +5,6 @@ import classes from './Products.module.scss';
 const Products = (props) => {
   let output;
 
-  console.log(props.products);
-
   if (props.products !== null) {
     output = props.products.map((product) => (
       <ProductItem
@@ -17,13 +15,6 @@ const Products = (props) => {
         image={product.image}
       />
     ));
-  } else {
-    output = (
-      <p>
-        Sometimes the API https://fakestoreapi.com/ takes very long time to
-        load, try refreshing the page to see the products section!
-      </p>
-    );
   }
 
   return <section className={classes['section-products']}>{output}</section>;

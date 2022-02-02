@@ -9,9 +9,11 @@ import clothesImg2 from '../assets/images/clothes2.jpg';
 
 const About = () => {
   const { addToRefs, scrollRevealAnimation } = useGsapScrollReveal();
+
   useEffect(() => {
     scrollRevealAnimation();
   }, [scrollRevealAnimation]);
+
   return (
     <>
       <section>
@@ -85,15 +87,6 @@ const About = () => {
             </blockquote>
             <p className={classes['story__quote-author']}>- Steve Jobs</p>
           </div>
-          {/*      <div className={classes['story-quote']}>
-            <blockquote>
-              Creativity is just connecting things. When you ask creative people
-              how they did something, they feel a little guilty because they
-              didn't really do it, they just saw something. It seemed obvious to
-              them after a while.
-            </blockquote>
-            <p className={classes['story-quote__author']}>- Steve Jobs</p>
-          </div> */}
 
           <div className={classes['story-img-wrapper']}>
             <img src={clothesImg2} alt="clothes" />

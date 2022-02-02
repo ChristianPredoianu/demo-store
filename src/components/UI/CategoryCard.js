@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Card from './Card';
 
+import Card from './Card';
 import classes from './CategoryCard.module.scss';
 
 const CategoryCard = (props) => {

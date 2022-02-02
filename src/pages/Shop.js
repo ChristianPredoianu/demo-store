@@ -25,7 +25,6 @@ const Shop = () => {
 
   const filteredProductsHandler = (selectedCategory) => {
     setFilteredProducts(selectedCategory);
-    console.log(selectedCategory);
     setInitialCategory(null);
   };
 

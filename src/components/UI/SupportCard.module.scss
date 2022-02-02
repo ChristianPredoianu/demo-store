@@ -1,0 +1,43 @@
+@use '../../sass/abstracts/' as *;
+
+.support-card {
+  @include flex-config($direction: column, $align: center);
+  margin: 0 auto;
+  width: 90%;
+  box-shadow: var(--box-shadow);
+
+  &:not(:first-child) {
+    margin-top: 10rem;
+  }
+
+  @include respond(sm) {
+    width: 80%;
+  }
+
+  @include respond(md) {
+    width: 30%;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
+
+.card-icon {
+  font-size: 5rem;
+  padding: 4rem 0;
+}
+
+.card-heading {
+  padding: 2rem 0;
+}
+
+.card-text {
+  flex: 1;
+  font-size: 1.8rem;
+  padding: 2rem 4rem;
+}
+
+.card-btn {
+  padding: 4rem 0;
+}

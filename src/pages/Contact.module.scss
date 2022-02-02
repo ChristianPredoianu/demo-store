@@ -6,7 +6,6 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-bottom: var(--section-spacing);
   padding: 30rem 0 20rem 0;
 
   &::before {
@@ -19,6 +18,40 @@
   width: 100%;
 }
 
+.contact-cards-section {
+  @include flex-config($direction: column, $justify: space-between);
+  margin: var(--section-spacing) 0;
+
+  @include respond(md) {
+    flex-direction: row;
+  }
+}
+
 .form-section {
   margin: var(--section-spacing) 0;
+}
+
+.heading-wrapper {
+  @include flex-config($justify: center);
+  margin: var(--section-spacing);
+}
+
+.social-heading {
+  position: relative;
+  font-size: 1.5rem;
+
+  &::after {
+    width: 20%;
+    @include pseudo($bottom: -3rem, $left: 40%);
+    border-bottom: 0.2rem solid var(--clr-blue);
+  }
+}
+
+.social-section {
+  @include flex-config($justify: space-around, $wrap: wrap);
+  margin: var(--section-spacing) auto;
+
+  @include respond(lg) {
+    margin: var(--section-spacing) auto 30rem auto;
+  }
 }

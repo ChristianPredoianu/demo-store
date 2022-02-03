@@ -18,17 +18,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
     <img src="https://github.com/ChristianPredoianu/demo-store/blob/main/src/assets/images/electronics.jpg" alt="Logo" width="200" height="150">
   </a>
 
-  <h3 align="center">Sneaker Store</h3>
+  <h3 align="center">React Demo-Store</h3>
 
   <p align="center">
-   A shoe shop made with Vue.js 
+   A fictional store made in React.js 
     <br />
-    <a href="https://github.com/ChristianPredoianu/sneaker-store-v2-vue-composition-api-"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ChristianPredoianu/demo-store"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://sneaker-storev2.netlify.app/">View Demo</a>
+    <a href="https://react-fake-store.netlify.app//">View Demo</a>
     ·
-    <a href="https://github.com/ChristianPredoianu/sneaker-store-v2-vue-composition-api-/issues/issues">Report Bug</a>
+    <a href="https://github.com/ChristianPredoianu/demo-store/issues">Report Bug</a>
     ·
    
   </p>
@@ -65,15 +65,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is a mini shoe shop made with Vue.js
+A fuctional store project made in React.js
 
 ### Built With
 
-* [Vue.js](https://vuejs.org/)
-* [LocalStorage] 
+* [React.js](https://reactjs.org/)
+* [React Router V6](https://reactrouter.com/docs/en/v6/getting-started/overview)
+* [React Transition Group](https://reactcommunity.org/react-transition-group/)
 * [Sass](https://sass-lang.com/)
 * [Css](https://www.w3.org/Style/CSS/Overview.en.html)
 * [HTML](https://developer.mozilla.org/sv-SE/docs/Web/HTML)
+* [GSAP](https://greensock.com/gsap/)
+* [LocalStorage] 
 
 
 
@@ -93,26 +96,23 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ChristianPredoianu/sneaker-store-v2-vue-composition-api-.git
+   git clone https://github.com/ChristianPredoianu/demo-store.git
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
    
-3. Run dev server
+3. In the project directory, you can run:
    ```sh
-   npm run serve
+   npm start
    ```
-
-
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-A user can navigate to different sections of the app. Men, women, sneakers or dress.
-Click on desired shoe, choose a size and add to cart. Open the cart and remove items if needed.
+A user can navigate around the site, choose an avaliable category, add products to cart, remove from cart, filter products, use a contact form (Validation + front-end only), search for products.
 
 
 
@@ -126,14 +126,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Christian Predoianu - [@linkedin](https://se.linkedin.com/in/christian-predoianu-369218157) - christianpredoianu@yahoo.com
-Project Link: [https://github.com/ChristianPredoianu/sneaker-store-v2-vue-composition-api-](https://github.com/ChristianPredoianu/sneaker-store-v2-vue-composition-api-)
+Project Link: [https://github.com/ChristianPredoianu/demo-store](https://github.com/ChristianPredoianu/demo-store)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-
+* [SwiperJs](https://swiperjs.com/)
+* [Google Fonts](https://fonts.google.com/)
 * [Font-Awesome](https://fontawesome.com/)
 
 

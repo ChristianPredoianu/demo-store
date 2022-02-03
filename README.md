@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 <br />
 <p align="center">
   <a href="https://github.com/ChristianPredoianu/demo-store">
-    <img src="src/assests/images/man1.jpg" alt="Logo" width="200" height="150">
+    <img src="https://github.com/ChristianPredoianu/demo-store/blob/main/src/assets/images/man1.jpg" alt="Logo" width="200" height="150">
   </a>
 
   <h3 align="center">Sneaker Store</h3>

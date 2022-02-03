@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
     <a href="https://github.com/ChristianPredoianu/demo-store"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://react-fake-store.netlify.app//">View Demo</a>
+    <a href="https://react-fake-store.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/ChristianPredoianu/demo-store/issues">Report Bug</a>
     ·

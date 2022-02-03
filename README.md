@@ -112,7 +112,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-A user can navigate around the site, choose an avaliable category, add products to cart, remove from cart, filter products, use a contact form (Validation + front-end only), search for products.
+A user can navigate around the site, choose an avaliable category, add products to cart (products in cart are also stored in localstorage.), remove from cart, filter products, use a contact form (Validation + front-end only), search for products, scroll to top component that shows after scroling down on the website. 
 
 
 
